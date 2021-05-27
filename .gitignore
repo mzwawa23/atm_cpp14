@@ -1,0 +1,5 @@
+*.bdf
+.settings/
+build/
+obj/
+ATM_Cpp14_lib.a
