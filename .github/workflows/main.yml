@@ -38,7 +38,7 @@ jobs:
       # Uncomment if you are using C/C++test 2020.2 to generate a SARIF report:
       with:
         compilerConfig: 'gcc_7-64'
-        input: 'build/cpptestscan.bdf'
+        input: 'cpptestscan.bdf'
         testConfig: 'builtin://AUTOSAR C++14 Coding Guidelines'
       #   reportFormat: xml,html,custom
       #   additionalParams: '-property report.custom.extension=sarif -property report.custom.xsl.file=${PARASOFT_SARIF_XSL}'
