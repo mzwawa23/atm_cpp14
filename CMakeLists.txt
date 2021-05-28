@@ -15,6 +15,7 @@ message(STATUS " ... STARTING ...")
 
 set(TARGET_NAME ATM_Cpp14_lib)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(${TARGET_NAME}
   LANGUAGES CXX
