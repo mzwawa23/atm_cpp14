@@ -5,7 +5,7 @@ Bank::Bank() : myAccounts()
 {
 	myCurrentAccountNumber = 0;
 }
-        
+
 Bank::~Bank()
 {
     // NYI: Clean up account list
