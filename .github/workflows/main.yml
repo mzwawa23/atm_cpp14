@@ -1,40 +1,64 @@
-- name: Run Parasoft C/C++test
-  # You may pin to the exact commit or the version.
-  # uses: parasoft/run-cpptest-action@aeb0150eeb0f96098ad3bac53609fd462f88c4f6
-  uses: parasoft/run-cpptest-action@1.0.1
-  with:
-    # Installation folder of Parasoft C/C++test. If not specified, the cpptestcli executable must be added to $PATH.
-    installDir: # optional
-    # Working directory for running C/C++test.
-    workingDir: # optional, default is ${{ github.workspace }}
-    # Identifier of a compiler configuration. Ensure you specify the configuration that matches your compiler.
-    compilerConfig: # optional, default is gcc_9-64
-    # Test configuration to be used for code analysis.
-    testConfig: # optional, default is builtin://Recommended Rules
-    # Output folder for reports from code analysis.
-    reportDir: # optional, default is reports
-    # Format of reports from code analysis.
-    reportFormat: # optional, default is xml,html,sarif
-    # Input scope for analysis (typically, cpptestscan.bdf or compile_commands.json, depending on the project type and the build system).
-    input: # optional, default is cpptestscan.bdf
-    # Additional parameters for the cpptestcli executable.
-    additionalParams: # optional, default is 
-    # Command line pattern for running C/C++test.
-    commandLinePattern: # optional, default is ${cpptestcli} -compiler "${compilerConfig}" -config "${testConfig}" -property report.format=${reportFormat} -report "${reportDir}" -module . -input "${input}" ${additionalParams}
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+# This is a basic workflow to help you get started with the Run C/C++test action for a CMake-based project.
+name: C/C++test with CMake
+
+on:
+  # Triggers the workflow on push or pull request events but only for the master (main) branch.
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+  # Allows you to run this workflow manually from the Actions tab.
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel.
+jobs:
+  run-cpptest-make:
+    name: Analyze project with C/C++test
+
+    # Specifies the type of runner that the job will run on.
+    runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+    # Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    # Configures your CMake project. Be sure the compile_commands.json file is created.
+    - name: Configure project
+      run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -S . -B build
+
+    # Builds your CMake project. (This step is optional, as it is not required for code analysis).
+    - name: Build project (optional)
+      run: cmake --build build
+
+    # Runs code analysis with C/C++test.
+    - name: Run C/C++test
+      # Use the 'run-cpptest-action' GitHub action.
+      uses: parasoft/run-cpptest-action@1.0.1
+      # Optional parameters for 'run-cpptest-action'.
+      with:
+        # For CMake-based projects, use a compile_commands.json file as the input for analysis. 
+        input: build/compile_commands.json
+        # Uncomment if you are using C/C++test 2020.2 to generate a SARIF report:
+        # reportFormat: xml,html,custom
+        # additionalParams: '-property report.custom.extension=sarif -property report.custom.xsl.file=${PARASOFT_SARIF_XSL}'
+
+    # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
+    - name: Upload results (SARIF)
+      if: always()
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: reports/report.sarif
+    
+    # Uploads an archive that includes all report files (.xml, .html, .sarif).
+    - name: Archive reports
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Static analysis reports
+        path: reports/*.*
+
