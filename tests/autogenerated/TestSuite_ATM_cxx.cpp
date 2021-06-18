@@ -507,7 +507,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_2()
     /* Initializing argument 1 (accountNumber) */ 
     int _accountNumber  = -1;
     /* Initializing argument 2 (password) */ 
-    ::std:::string _password  = "";
+    ::std::string _password  = "";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
