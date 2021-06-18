@@ -3,8 +3,8 @@
 /* CPPTEST_TEST_SUITE_CODE_BEGIN AdditionalIncludes */
 /* CPPTEST_TEST_SUITE_CODE_END AdditionalIncludes */
 
-CPPTEST_CONTEXT("/ATM_Cpp14/ATM.cxx");
-CPPTEST_TEST_SUITE_INCLUDED_TO("/ATM_Cpp14/ATM.cxx");
+CPPTEST_CONTEXT("/ATM_Cpp14/src/ATM.cxx");
+CPPTEST_TEST_SUITE_INCLUDED_TO("/ATM_Cpp14/src/ATM.cxx");
 
 class TestSuite_ATM_cxx_a1e971d1 : public CppTest_TestSuite
 {
@@ -439,7 +439,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_fillUserRequest_9()
 /* CPPTEST_TEST_CASE_END test_fillUserRequest_9 */
 
 /* CPPTEST_TEST_CASE_BEGIN test_viewAccount_1 */
-/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::__cxx11::string) */
+/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_1()
 {
     /* Pre-condition initialization */
@@ -453,7 +453,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_1()
     /* Initializing argument 1 (accountNumber) */ 
     int _accountNumber  = -1;
     /* Initializing argument 2 (password) */ 
-    ::std::__cxx11::string _password  = "";
+    ::std::string _password  = "";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
@@ -465,7 +465,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_1()
 
 /* CPPTEST_TEST_CASE_BEGIN test_viewAccount_10 */
 // @REQ REQ-123, REQ-987
-/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::__cxx11::string) */
+/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_10()
 {
     /* Pre-condition initialization */
@@ -481,7 +481,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_10()
     /* Initializing argument 1 (accountNumber) */ 
     int _accountNumber  = 0;
     /* Initializing argument 2 (password) */ 
-    ::std::__cxx11::string _password  = "Invalid account";
+    ::std::string _password  = "Invalid account";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
@@ -492,7 +492,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_10()
 /* CPPTEST_TEST_CASE_END test_viewAccount_10 */
 
 /* CPPTEST_TEST_CASE_BEGIN test_viewAccount_2 */
-/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::__cxx11::string) */
+/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_2()
 {
     /* Pre-condition initialization */
@@ -507,7 +507,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_2()
     /* Initializing argument 1 (accountNumber) */ 
     int _accountNumber  = -1;
     /* Initializing argument 2 (password) */ 
-    ::std::__cxx11::string _password  = "";
+    ::std:::string _password  = "";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
@@ -518,7 +518,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_2()
 /* CPPTEST_TEST_CASE_END test_viewAccount_2 */
 
 /* CPPTEST_TEST_CASE_BEGIN test_viewAccount_3 */
-/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::__cxx11::string) */
+/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_3()
 {
     /* Pre-condition initialization */
@@ -533,7 +533,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_3()
     /* Initializing argument 1 (accountNumber) */ 
     int _accountNumber  = 0;
     /* Initializing argument 2 (password) */ 
-    ::std::__cxx11::string _password  = "";
+    ::std::string _password  = "";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
@@ -544,7 +544,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_3()
 /* CPPTEST_TEST_CASE_END test_viewAccount_3 */
 
 /* CPPTEST_TEST_CASE_BEGIN test_viewAccount_4 */
-/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::__cxx11::string) */
+/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_4()
 {
     /* Pre-condition initialization */
@@ -559,7 +559,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_4()
     /* Initializing argument 1 (accountNumber) */ 
     int _accountNumber  = cpptestLimitsGetMinInt();
     /* Initializing argument 2 (password) */ 
-    ::std::__cxx11::string _password  = "";
+    ::std::string _password  = "";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
@@ -570,7 +570,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_4()
 /* CPPTEST_TEST_CASE_END test_viewAccount_4 */
 
 /* CPPTEST_TEST_CASE_BEGIN test_viewAccount_5 */
-/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::__cxx11::string) */
+/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_5()
 {
     /* Pre-condition initialization */
@@ -585,7 +585,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_5()
     /* Initializing argument 1 (accountNumber) */ 
     int _accountNumber  = 1;
     /* Initializing argument 2 (password) */ 
-    ::std::__cxx11::string _password  = "Hello world";
+    ::std::string _password  = "Hello world";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
@@ -596,7 +596,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_5()
 /* CPPTEST_TEST_CASE_END test_viewAccount_5 */
 
 /* CPPTEST_TEST_CASE_BEGIN test_viewAccount_6 */
-/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::__cxx11::string) */
+/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_6()
 {
     /* Pre-condition initialization */
@@ -612,7 +612,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_6()
     /* Initializing argument 1 (accountNumber) */ 
     int _accountNumber  = cpptestLimitsGetMaxInt();
     /* Initializing argument 2 (password) */ 
-    ::std::__cxx11::string _password  = "Hello world";
+    ::std::string _password  = "Hello world";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
@@ -623,7 +623,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_6()
 /* CPPTEST_TEST_CASE_END test_viewAccount_6 */
 
 /* CPPTEST_TEST_CASE_BEGIN test_viewAccount_7 */
-/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::__cxx11::string) */
+/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_7()
 {
     /* Pre-condition initialization */
@@ -637,7 +637,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_7()
     /* Initializing argument 1 (accountNumber) */ 
     int _accountNumber  = 1;
     /* Initializing argument 2 (password) */ 
-    ::std::__cxx11::string _password  = "A very long string that is supposed to contain more than 256 characters in length..................................................................................................................................................................................";
+    ::std::string _password  = "A very long string that is supposed to contain more than 256 characters in length..................................................................................................................................................................................";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
@@ -648,7 +648,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_7()
 /* CPPTEST_TEST_CASE_END test_viewAccount_7 */
 
 /* CPPTEST_TEST_CASE_BEGIN test_viewAccount_8 */
-/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::__cxx11::string) */
+/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_8()
 {
     /* Pre-condition initialization */
@@ -663,7 +663,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_8()
     /* Initializing argument 1 (accountNumber) */ 
     int _accountNumber  = cpptestLimitsGetMaxInt();
     /* Initializing argument 2 (password) */ 
-    ::std::__cxx11::string _password  = "A very long string that is supposed to contain more than 256 characters in length..................................................................................................................................................................................";
+    ::std::string _password  = "A very long string that is supposed to contain more than 256 characters in length..................................................................................................................................................................................";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
@@ -674,7 +674,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_8()
 /* CPPTEST_TEST_CASE_END test_viewAccount_8 */
 
 /* CPPTEST_TEST_CASE_BEGIN test_viewAccount_9 */
-/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::__cxx11::string) */
+/* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_9()
 {
     /* Pre-condition initialization */
@@ -689,7 +689,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_9()
     /* Initializing argument 1 (accountNumber) */ 
     int _accountNumber  = -1;
     /* Initializing argument 2 (password) */ 
-    ::std::__cxx11::string _password  = "Invalid account";
+    ::std::string _password  = "Invalid account";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
