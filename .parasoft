@@ -6,7 +6,7 @@
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.command.cpp.linux.x86=g++
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.command.cpp.win32.x86=g++
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.family.linux.x86=gcc_7-64
-/ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.family.win32.x86=gcc_7_64
+/ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.family.win32.x86=gcc_7-64
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.options.linux.x86=${cpptest\:original_options} -DPARASOFT_CPPTEST
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.options.win32.x86=${cpptest\:original_options} -DPARASOFT_CPPTEST
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.connected.6x.projects=
