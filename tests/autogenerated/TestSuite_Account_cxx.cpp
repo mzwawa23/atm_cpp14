@@ -3,8 +3,8 @@
 /* CPPTEST_TEST_SUITE_CODE_BEGIN AdditionalIncludes */
 /* CPPTEST_TEST_SUITE_CODE_END AdditionalIncludes */
 
-CPPTEST_CONTEXT("/ATM_Cpp14/Account.cxx");
-CPPTEST_TEST_SUITE_INCLUDED_TO("/ATM_Cpp14/Account.cxx");
+CPPTEST_CONTEXT("/ATM_Cpp14/src/Account.cxx");
+CPPTEST_TEST_SUITE_INCLUDED_TO("/ATM_Cpp14/src/Account.cxx");
 
 class TestSuite_Account_cxx_15e9a265 : public CppTest_TestSuite
 {
