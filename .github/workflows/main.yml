@@ -37,7 +37,7 @@ jobs:
       uses: parasoft/run-cpptest-action@1.0.1
       # Uncomment if you are using C/C++test 2020.2 to generate a SARIF report:
       with:
-        compilerConfig: 'gcc_7-64'
+        compilerConfig: 'gcc_9-64'
         input: 'cpptestscan.bdf'
         testConfig: 'builtin://AUTOSAR C++14 Coding Guidelines'
       #   reportFormat: xml,html,custom
