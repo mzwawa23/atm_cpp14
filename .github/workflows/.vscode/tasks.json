@@ -1,0 +1,26 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Configure and Build",
+            "type": "shell",
+            "command": "bash -c 'mkdir .build;cd .build;cmake -DCPPTEST_COVERAGE=ON ..;make'",
+            "group": "build"
+        },
+        {
+            "label": "Run",
+            "type": "shell",
+            "command": "bash -c 'cd .build;rm -rf cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog;./atm_gtest;make coverage-compute coverage-suppress coverage-report'",
+            "group": "build"
+        },
+        {
+            "label": "Update Coverage",
+            "type": "shell",
+            "command": "bash -c 'cd .build;make coverage-suppress coverage-report'",
+            "group": "build"
+        }
+
+    ]
+}

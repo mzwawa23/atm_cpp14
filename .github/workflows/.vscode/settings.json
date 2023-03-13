@@ -1,0 +1,4 @@
+{
+    "cmake.configureOnOpen": true,
+    "cpptest.testConfiguration": "builtin://AUTOSAR C++14 Coding Guidelines"
+}
