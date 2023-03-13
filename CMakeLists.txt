@@ -15,12 +15,19 @@ message(STATUS " ... STARTING ...")
 
 set(TARGET_NAME ATM_Cpp14_lib)
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
 project(${TARGET_NAME}
   LANGUAGES CXX
   VERSION "1.0.0"
 )
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
+if(CPPTEST_COVERAGE)
+  include(cpptest-coverage.cmake)
+endif()
+
+add_compile_definitions(STDINPUT)
 
 set(SRC_FILES
   ./src/Account.cxx
@@ -48,8 +55,6 @@ set_target_properties(${TARGET_NAME} PROPERTIES
 target_include_directories(${TARGET_NAME}
   PUBLIC ${INCLUDE_DIRS}
 )
-
-#set_target_properties(${TARGET_NAME} PROPERTIES VS_USER_PROPS "$(SolutionDir)\\parasoft-coverage.props}")
 
 option(ENABLE_GT_TESTS "Enable GoogleTest tests" ON)
 message(STATUS "Enable GoogleTest: ${ENABLE_UNIT_TESTS}")
