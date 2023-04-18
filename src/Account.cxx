@@ -4,6 +4,14 @@
 
 #include <utility>
 
+static const int STANDARD = 1;
+static const int SILVER = 2;
+static const int GOLD = 3;
+static const int PLATINUM = 4;
+
+int globalState = 0; 
+static double value = 0;
+
 // C++11/14: move constructor
 Account::Account(Account&& a):
     myAccountNumber(a.myAccountNumber),
@@ -29,6 +37,38 @@ double Account::deposit(double amount)
 
     myBalance += amount;
     return (getBalance());
+}
+
+
+int Account::setStatus(double income)
+{
+	int accountStatus = 0;
+	double balance = getBalance();
+	double annual_income = income * 12;
+	value = annual_income + balance;
+
+	if (value <= 10000)
+	{
+		accountStatus = STANDARD;
+	}
+	else if (value > 10000 && value <= 20000)
+	{
+		accountStatus = SILVER;
+	}
+	else if (value > 20000 && value <= 40000)
+	{
+		accountStatus = SILVER;
+	}
+	else if (value > 40000 && value <= 60000)
+	{
+		accountStatus = GOLD;
+	}
+	else if (value > 60000)
+	{
+		accountStatus = PLATINUM;
+	}
+
+	return accountStatus;
 }
 
 
