@@ -50,6 +50,8 @@ class Account
             return (myPassword.data());
         }   
  
+        int setStatus(double income);
+
         double deposit(double amount);
         
         double debit(double amount);
