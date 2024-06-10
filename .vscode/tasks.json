@@ -1,0 +1,38 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Configure and Build",
+            "type": "shell",
+            "command": "bash -c 'mkdir build;cd build;cmake -DCPPTEST_COVERAGE=ON ..;make'",
+            "group": "build"
+        },
+        {
+            "label": "Run",
+            "type": "shell",
+            "command": "bash -c 'cd build;rm -rf cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog;./atm_gtest --gtest_output=\"xml:atm_cpp14.xml\"'",
+            "group": "build"
+        },
+        {
+            "label": "Compute logs and generate reports",
+            "type": "shell",
+            "command": "bash -c 'cd build;make cpptestcov-compute cpptestcov-suppress cpptestcov-report'",
+            "group": "build"
+        },
+        {
+            "label": "Update Coverage",
+            "type": "shell",
+            "command": "bash -c 'cd build;make cpptestcov-suppress cpptestcov-report'",
+            "group": "build"
+        },
+        {
+            "label": "Upload results to DTP",
+            "type": "shell",
+            "command": "bash -c 'cd build;cpptestcov publish ../.coverage/coverage.xml ../.coverage/gtest.xml ../.coverage/coverage_details.xml -settings ../report.properties'",
+            "group": "build"
+        }
+
+    ]
+}

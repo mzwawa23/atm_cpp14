@@ -22,6 +22,13 @@ project(${TARGET_NAME}
   VERSION "1.0.0"
 )
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
+if(CPPTEST_COVERAGE)
+  include(cpptest-coverage.cmake)
+endif()
+
 set(SRC_FILES
   ./src/Account.cxx
   ./src/ATM.cxx
