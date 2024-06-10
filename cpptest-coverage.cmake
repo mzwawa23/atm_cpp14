@@ -177,28 +177,6 @@ function (cpptest_enable_coverage)
         -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
         "${CPPTEST_SOURCE_DIR}/.coverage" >> report.json
     &&
-    ${CPPTEST_HOME_DIR}/bin/cpptestcov report dtp-summary
-        -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
-        -project ${DTP_PROJECT_NAME}
-        -build ${DTP_PROJECT_NAME}-${CURRENT_DATE}
-        "${CPPTEST_SOURCE_DIR}/.coverage" >> 
-        "${CPPTEST_SOURCE_DIR}/.coverage/coverage.xml"
-    &&
-    ${CPPTEST_HOME_DIR}/bin/cpptestcov report dtp-details
-        -project ${DTP_PROJECT_NAME}
-        -scm
-        -image "\"all;gtest\""
-        -checksum
-        -build ${DTP_PROJECT_NAME}-${CURRENT_DATE}
-        "${CPPTEST_SOURCE_DIR}/.coverage" >
-        "${CPPTEST_SOURCE_DIR}/.coverage/coverage_details.xml"
-      &&
-    ${CPPTEST_HOME_DIR}/bin/cpptestcov report dtp-gtest
-        -project ${DTP_PROJECT_NAME}
-        -build ${DTP_PROJECT_NAME}-${CURRENT_DATE}
-        "${CPPTEST_SOURCE_DIR}/build/*.xml" >
-        "${CPPTEST_SOURCE_DIR}/.coverage/gtest.xml"
-    &&
     ${CPPTEST_HOME_DIR}/bin/cpptestcov report cobertura
         "${CPPTEST_SOURCE_DIR}/.coverage" > 
         "${CPPTEST_SOURCE_DIR}/.coverage/coverage_cubertura.xml"
