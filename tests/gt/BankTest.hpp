@@ -21,5 +21,28 @@ TEST(Bank, addAccountMultiple) {
   }
 }
 
+TEST(Bank, getAccount_1) {
+  int num = 0;
+  string password = "";
+  Bank theBank;
+  Account * acct = theBank.getAccount(num, password);
+  ASSERT_FALSE(nullptr != acct);
+}
 
+TEST(Bank, getAccount_2) {
+  int num = 0;
+  string password = "";
+  Bank theBank;
+  theBank.addAccount();
+  Account * acct = theBank.getAccount(num, password);
+  ASSERT_TRUE(nullptr != acct);
+}
 
+TEST(Bank, getAccount_3) {
+  int num = 0;
+  string password = "test";
+  Bank theBank;
+  theBank.addAccount();
+  Account * acct = theBank.getAccount(num, password);
+  ASSERT_TRUE(nullptr != acct);
+}
