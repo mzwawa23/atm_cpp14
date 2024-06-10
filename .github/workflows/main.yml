@@ -59,9 +59,9 @@ jobs:
           # Upload coverage reports
           path: ${{github.workspace}}/demo_1_hoofs/.coverage
         
-     - name: Deploy to GitHub Pages
-       id: deployment
-       uses: actions/deploy-pages@v2
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2
     
     - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
@@ -75,7 +75,7 @@ jobs:
       # Query for project's coverage and compare with the gate requirements
       run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $LINE_COV_GATE%, echieved $NUMBER%"; false; else echo "Line coverage quality gate passed with $NUMBER% (required $LINE_COV_GATE%)"; true; fi  
 
-    - name: Print Report URL
-     env:
-     REPORT_URL: ${{ steps.deployment.outputs.page_url }}
-     run: echo "Coverage report $REPORT_URL"
+#    - name: Print Report URL
+#      env:
+#      REPORT_URL: ${{ steps.deployment.outputs.page_url }}
+#      run: echo "Coverage report $REPORT_URL"

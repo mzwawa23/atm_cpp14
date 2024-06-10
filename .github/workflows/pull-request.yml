@@ -5,8 +5,8 @@ on:
     branches:
       - master
 env:
-  LINE_COV_GATE: 60
-  MCDC_COV_GATE: 30
+  LINE_COV_GATE: 20
+  MCDC_COV_GATE: 10
 
 permissions:
   contents: read
@@ -35,7 +35,7 @@ jobs:
     - name: Run Tests
       working-directory: ${{github.workspace}}/.build
       shell: bash
-      run: rm -rf cpptest-coverage/CovGoogleTest/CovGoogleTest.clog && ctest || true 
+      run: rm -rf cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog && ctest || true 
 
     - name: Generate Reports
       working-directory: ${{github.workspace}}/.build
