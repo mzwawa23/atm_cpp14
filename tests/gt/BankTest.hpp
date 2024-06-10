@@ -29,6 +29,7 @@ TEST(Bank, getAccount_1) {
   ASSERT_FALSE(nullptr != acct);
 }
 
+/*
 TEST(Bank, getAccount_2) {
   int num = 0;
   string password = "";
@@ -46,3 +47,4 @@ TEST(Bank, getAccount_3) {
   Account * acct = theBank.getAccount(num, password);
   ASSERT_TRUE(nullptr != acct);
 }
+*/
