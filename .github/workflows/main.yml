@@ -6,7 +6,7 @@ on:
 
 env:
   LINE_COV_GATE: 20
-  MCDC_COV_GATE: 10
+  MCDC_COV_GATE: 30
 
 permissions:
   contents: read
@@ -60,4 +60,4 @@ jobs:
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements
-      run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $LINE_COV_GATE%, achieved $NUMBER%"; false; else echo "Line coverage quality gate passed with $NUMBER% (required $LINE_COV_GATE%)"; true; fi  
+      run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $MCDC_COV_GATE%, achieved $NUMBER%"; false; else echo "MC/DC coverage quality gate passed with $NUMBER% (required $MCDC_COV_GATE%)"; true; fi  
