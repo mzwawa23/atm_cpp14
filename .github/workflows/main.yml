@@ -24,7 +24,7 @@ jobs:
     - name: Configure CMake
       shell: bash
       working-directory: ${{github.workspace}}
-      run: cmake -DCPPTEST_COVERAGE=ON -S . -B build 
+      run: cmake -DCPPTEST_COVERAGE=ON -S . -B build
 
     - name: Build 
       working-directory: ${{github.workspace}}
@@ -33,12 +33,12 @@ jobs:
       run: cmake --build build
 
     - name: Run Tests
-      working-directory: ${{github.workspace}}/.build
+      working-directory: ${{github.workspace}}/build
       shell: bash
-      run: rm -rf cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog && ctest || true 
+      run: rm -rf /cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog && ctest || true 
 
     - name: Generate Reports
-      working-directory: ${{github.workspace}}/.build
+      working-directory: ${{github.workspace}}/build
       shell: bash
       run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report 
  
@@ -50,19 +50,6 @@ jobs:
         path: |
           .coverage/*.*
 
-    - name: Setup Pages
-      uses: actions/configure-pages@v3
-
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
-      with:
-          # Upload coverage reports
-          path: ${{github.workspace}}/demo_1_hoofs/.coverage
-        
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v2
-    
     - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
