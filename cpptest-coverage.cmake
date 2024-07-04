@@ -101,8 +101,7 @@ function (cpptest_enable_coverage)
       -exclude "regex:*"
       -include "regex:${CPPTEST_SOURCE_DIR}/*"
       -exclude "regex:${CPPTEST_BINARY_DIR}/*"
-      -ignore "regex:${CPPTEST_SOURCE_DIR}/tests/*"
-      -ignore "regex:${CPPTEST_BINARY_DIR}/*")
+      -exclude "regex:${CPPTEST_SOURCE_DIR}/tests/*")
 
   # Use advanced settings file for cpptestcc, if exists
   if(EXISTS "${CMAKE_SOURCE_DIR}/.cpptestcc")
