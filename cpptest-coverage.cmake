@@ -25,8 +25,10 @@ function (cpptest_enable_coverage)
 
   # Configure C/C++test compiler identifier
   set(CPPTEST_COMPILER_ID "gcc_10-64")
-  # Configure coverage type(s) - see 'cpptestcc -help' for details
-  set(CPPTEST_COVERAGE_TYPE_FLAGS -line-coverage -block-coverage -statement-coverage -decision-coverage -function-coverage -simple-condition-coverage -mcdc-coverage -call-coverage)
+  # Configure coverage type(s) for instrumentation engine - see 'cpptestcc -help' for details
+  set(CPPTEST_COVERAGE_TYPE_INSTRUMENTATION -line-coverage -statement-coverage -block-coverage -decision-coverage -simple-condition-coverage -mcdc-coverage -function-coverage -call-coverage)
+  # Configure coverage type(s) for reporting engine - see 'cpptestcov -help' for details
+  set(CPPTEST_COVERAGE_TYPE_REPORT "LC,SC,BC,DC,SCC,MCDC,FC,CC" )
   # Configure C/C++test project name
   set(CPPTEST_PROJECT_NAME ${CMAKE_PROJECT_NAME})
   # Configure coverage workspace folder
@@ -44,6 +46,15 @@ function (cpptest_enable_coverage)
   if(NOT CPPTEST_HOME_DIR)
     message(FATAL_ERROR "$CPPTEST_HOME not set" )
   endif()
+
+  if(DTP_PROJECT)
+    set(DTP_PROJECT_NAME ${DTP_PROJECT})
+  else()
+    set(DTP_PROJECT_NAME ${CMAKE_PROJECT_NAME})
+  endif()
+  
+  string(TIMESTAMP CURRENT_DATE "%Y-%m-%d")
+  message("***********" ${CURRENT_DATE})
 
   # Build C/C++test coverage runtime library
   set(CPPTEST_RUNTIME_BUILD_DIR ${CMAKE_BINARY_DIR}/cpptest-runtime)
@@ -86,11 +97,11 @@ function (cpptest_enable_coverage)
   set(CPPTEST_CPPTESTCC_OPTS
       -workspace "${CPPTEST_COVERAGE_WORKSPACE}"
       -compiler ${CPPTEST_COMPILER_ID}
-      ${CPPTEST_COVERAGE_TYPE_FLAGS}
+      ${CPPTEST_COVERAGE_TYPE_INSTRUMENTATION}
       -exclude "regex:*"
       -include "regex:${CPPTEST_SOURCE_DIR}/*"
       -exclude "regex:${CPPTEST_BINARY_DIR}/*"
-      -ignore "regex:*_test.cpp"
+      -ignore "regex:${CPPTEST_SOURCE_DIR}/tests/*"
       -ignore "regex:${CPPTEST_BINARY_DIR}/*")
 
   # Use advanced settings file for cpptestcc, if exists
@@ -113,16 +124,17 @@ function (cpptest_enable_coverage)
   #    "${CPPTEST_CPPTESTCC} ${CPPTEST_CPPTESTCC_OPTS} -- ")
 
   # Compute coverage data files (.json) into ${CPPTEST_SOURCE_DIR}/.coverage
-  add_custom_target(coverage-compute
+  add_custom_target(cpptestcov-compute
     COMMAND
     mkdir -p "${CPPTEST_SOURCE_DIR}/.coverage"
     &&
-    ${CPPTEST_HOME_DIR}/bin/coverage-compute
+    ${CPPTEST_HOME_DIR}/bin/cpptestcov compute
         -map="${CPPTEST_COVERAGE_WORKSPACE}/.cpptest/cpptestcc"
         -clog="${CPPTEST_COVERAGE_LOG_FILE}"
         -out="${CPPTEST_SOURCE_DIR}/.coverage"
+        -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
     &&
-    ${CPPTEST_HOME_DIR}/bin/coverage-index.py
+    ${CPPTEST_HOME_DIR}/bin/cpptestcov index
         "${CPPTEST_SOURCE_DIR}/.coverage"   
   )
 
@@ -131,28 +143,49 @@ function (cpptest_enable_coverage)
   # - markdown: ${CPPTEST_SOURCE_DIR}/.coverage/coverage.md
   # - html: ${CPPTEST_SOURCE_DIR}/.coverage/coverage.html
   # - console output
-  add_custom_target(coverage-report
+  add_custom_target(cpptestcov-report
     COMMAND
-    ${CPPTEST_HOME_DIR}/bin/coverage-report-stats-txt.py
+    ${CPPTEST_HOME_DIR}/bin/cpptestcov report text
+        -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
         "${CPPTEST_SOURCE_DIR}/.coverage" >
         "${CPPTEST_SOURCE_DIR}/.coverage/coverage.txt"
     &&
-    ${CPPTEST_HOME_DIR}/bin/coverage-report-stats-md.py
+    ${CPPTEST_HOME_DIR}/bin/cpptestcov report markdown
+        -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
         "${CPPTEST_SOURCE_DIR}/.coverage" >
         "${CPPTEST_SOURCE_DIR}/.coverage/coverage.md"
     &&
-    ${CPPTEST_HOME_DIR}/bin/coverage-report-stats-html.py
+    ${CPPTEST_HOME_DIR}/bin/cpptestcov report html
+        -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
         "${CPPTEST_SOURCE_DIR}/.coverage" >
         "${CPPTEST_SOURCE_DIR}/.coverage/coverage.html"
     &&
-    ${CPPTEST_HOME_DIR}/bin/coverage-report-stats-txt.py
+    ${CPPTEST_HOME_DIR}/bin/cpptestcov report html-multipage
+        -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
+        -code
+        -out=../.coverage/report
         "${CPPTEST_SOURCE_DIR}/.coverage"
+    &&
+    ${CPPTEST_HOME_DIR}/bin/cpptestcov report text
+        -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
+        "${CPPTEST_SOURCE_DIR}/.coverage"
+    &&
+    ${CPPTEST_HOME_DIR}/bin/cpptestcov report mcdc
+        "${CPPTEST_SOURCE_DIR}/.coverage"
+    &&
+    ${CPPTEST_HOME_DIR}/bin/cpptestcov report json
+        -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
+        "${CPPTEST_SOURCE_DIR}/.coverage" >> report.json
+    &&
+    ${CPPTEST_HOME_DIR}/bin/cpptestcov report cobertura
+        "${CPPTEST_SOURCE_DIR}/.coverage" > 
+        "${CPPTEST_SOURCE_DIR}/.coverage/coverage_cubertura.xml"
   )
 
   # Apply coverage suppressions to existing coverage data files
-  add_custom_target(coverage-suppress
+  add_custom_target(cpptestcov-suppress
     COMMAND
-    ${CPPTEST_HOME_DIR}/bin/coverage-suppress.py
+    ${CPPTEST_HOME_DIR}/bin/cpptestcov suppress
         "${CPPTEST_SOURCE_DIR}/.coverage"
   )
 
