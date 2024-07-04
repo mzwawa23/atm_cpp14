@@ -6,7 +6,7 @@
         {
             "label": "Configure build",
             "type": "shell",
-            "command": "bash -c 'mkdir .build;cd .build;cmake ..'",
+            "command": "bash -c 'mkdir build;cd build;cmake ..'",
             "group": "build"
         },        {
             "label": "Configure and Build",

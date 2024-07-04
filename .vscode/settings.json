@@ -1,3 +1,26 @@
 {
-    "cpptest.testConfiguration": "builtin://MISRA C++ 2023"
+    "cpptest.testConfiguration": "/home/marcin/work/source/github/atm_cpp14/conf/Recommended Rules.properties",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "googletest.failed",
+                "settings": {
+                    "foreground": "#f00"
+                }
+            },
+            {
+                "scope": "googletest.passed",
+                "settings": {
+                    "foreground": "#0f0"
+                }
+            },
+            {
+                "scope": "googletest.run",
+                "settings": {
+                    "foreground": "#0f0"
+                }
+            }
+        ]
+    },
+    "cpptest.commandLinePattern": "cpptestcli ${stopFile} ${compilerConfig} ${testConfig} ${reportDir} ${selectedFiles} -module . -exclude \"**/googletest/**\" -exclude \"**/tests/**\" -exclude \"**/googlemock/**\" -input build/compile_commands.json"
 }

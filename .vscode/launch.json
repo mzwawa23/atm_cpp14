@@ -1,0 +1,27 @@
+"version": "0.2.0",
+"configurations": [
+{
+    "name": "(lldb) Launch",
+    "type": "cppdbg",
+    "request": "launch",
+    "program": "enter program name, for example ${workspaceFolder}/a.out",
+    "args": [],
+    "stopAtEntry": false,
+    "cwd": "${workspaceFolder}",
+    "environment": [],
+    "externalConsole": true,
+    "MIMode": "lldb"
+},
+{
+    "gtest-adapter.debugConfig": "debug",
+    "gtest-adapter.showCodeLens": true,
+    "gtest-adapter.refreshAfterBuild": true,
+    "gtest-adapter.runAfterBuild": false,
+    "gtest-adapter.gotoTestTitle": "Go to Tree",
+    "gtest-adapter.runTitle": "Run",
+    "gtest-adapter.debugTitle": "Debug",
+    "gtest-adapter.supportLocation": false,
+    "gtest-adapter.showRunOutput": true,
+    "gtest-adapter.clearRunOutput": true,
+}
+]
