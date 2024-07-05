@@ -59,4 +59,20 @@ TEST(Account, debitSimple) {
 //   ASSERT_EQ(acct.getBalance(), initial - 1.0);
 // }
 
+TEST(Account, setStatus_STANDARD) {
+  double income = 0.0;
+  double initial = 1000; 
+  double value = 0.0;
+  Account acct(income);
+  //acct.myBalance = 1000.0;
+  ASSERT_EQ(acct.setStatus(income), 1);
+}
 
+TEST(Account, setStatus_SILVER_1) {
+  double income = 200.0;
+  double initial = 6000; 
+  double value = 0.0;
+  Account acct(income);
+  //acct.myBalance = 6000.0;
+  ASSERT_EQ(acct.setStatus(income), 1);
+}
