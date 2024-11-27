@@ -1,11 +1,13 @@
 name: Unit testing with coverage (master)
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
-    branches:
-      - master
+    branches: [ main ]
+
 env:
-  LINE_COV_GATE: 20
+  LINE_COV_GATE: 30
   MCDC_COV_GATE: 10
 
 permissions:
@@ -24,21 +26,22 @@ jobs:
     - name: Configure CMake
       shell: bash
       working-directory: ${{github.workspace}}
-      run: cmake -DCPPTEST_COVERAGE=ON -S . -B .build
+      run: cmake -DCPPTEST_COVERAGE=ON -S . -B build
 
     - name: Build 
       working-directory: ${{github.workspace}}
       shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
-      run: cmake --build .build
+      run: cmake --build build
 
     - name: Run Tests
-      working-directory: ${{github.workspace}}/.build
+      working-directory: ${{github.workspace}}/build
       shell: bash
-      run: rm -rf cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog && ctest || true 
+      run: rm -rf /cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog && ./atm_gtest || true 
+     # run: rm -rf /cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog && ctest || true 
 
     - name: Generate Reports
-      working-directory: ${{github.workspace}}/.build
+      working-directory: ${{github.workspace}}/build
       shell: bash
       run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report 
  
@@ -48,16 +51,16 @@ jobs:
       with:
         name: CpptestReports
         path: |
-          .coverage/*.*
+          .coverage/*
 
     - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements
-      run: NUMBER=$(cpptestcov query -coverage LC .coverage) && if [ $NUMBER -lt $LINE_COV_GATE ]; then echo "Line coverage quality gate failed"; echo "Expected result $LINE_COV_GATE%, echieved $NUMBER%"; false; else echo "Line coverage quality gate passed with $NUMBER% (required $LINE_COV_GATE%)"; true; fi      
+      run: NUMBER=$(cpptestcov query -coverage LC .coverage) && if [ $NUMBER -lt $LINE_COV_GATE ]; then echo "Line coverage quality gate failed"; echo "Expected result $LINE_COV_GATE%, achieved $NUMBER%"; false; else echo "Line coverage quality gate passed with $NUMBER% (required $LINE_COV_GATE%)"; true; fi      
       
     - name: MCDC Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements
-      run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $LINE_COV_GATE%, echieved $NUMBER%"; false; else echo "Line coverage quality gate passed with $NUMBER% (required $LINE_COV_GATE%)"; true; fi  
+      run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $MCDC_COV_GATE%, achieved $NUMBER%"; false; else echo "MC/DC coverage quality gate passed with $NUMBER% (required $MCDC_COV_GATE%)"; true; fi  
