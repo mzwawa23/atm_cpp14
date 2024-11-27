@@ -107,8 +107,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: CoverageReports
-        path: |
-          .coverage/*.*
+        path: .coverage/*.*
 
     - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
