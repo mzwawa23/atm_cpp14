@@ -1,20 +1,29 @@
-# This is a basic workflow to help you get started with the Run C/C++test action for Make-based project.
-name: C/C++test with Make
+name: SCA and Unit testing with coverage (master)
 
 on:
-  # Triggers the workflow on push or pull request events but only for the master (main) branch.
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab.
-  workflow_dispatch:
+env:
+  LINE_COV_GATE: 20
+  MCDC_COV_GATE: 30
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  run-cpptest-make:
+  run-cpptest-SCA:
     name: Analyze project with C/C++test
+
+    # Specifies required permissions for upload-sarif action
+    permissions:
+      # required for all workflows
+      security-events: write
+      # only required for workflows in private repositories
+      actions: read
+      contents: read
 
     # Specifies the type of runner that the job will run on.
     runs-on: self-hosted
@@ -24,38 +33,76 @@ jobs:
 
     # Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
     - name: Checkout code
-      uses: actions/checkout@v2
-    
-    # Builds your Make project using 'cpptesttrace' to collect input data for code analysis.
-    # Be sure 'cpptesttrace' is available on $PATH.
-    - name: Build project
-      run: cpptesttrace make clean all
+      uses: actions/checkout@v4
+
+    # Configures your CMake project. Be sure the compile_commands.json file is created.
+    - name: Configure project
+      run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -S . -B build
+
+    # Builds your CMake project. (This step is optional, as it is not required for code analysis).
+    #- name: Build project (optional)
+    #  run: cmake --build build
 
     # Runs code analysis with C/C++test.
     - name: Run C/C++test
       # Use the 'run-cpptest-action' GitHub action.
-      uses: parasoft/run-cpptest-action@1.0.1
-      # Uncomment if you are using C/C++test 2020.2 to generate a SARIF report:
+      uses: parasoft/run-cpptest-action@2.0.2
+      # Optional parameters for 'run-cpptest-action'.
       with:
-        compilerConfig: 'gcc_9-64'
-        input: 'cpptestscan.bdf'
-        testConfig: 'builtin://AUTOSAR C++14 Coding Guidelines'
-      #   reportFormat: xml,html,custom
-      #   additionalParams: '-property report.custom.extension=sarif -property report.custom.xsl.file=${PARASOFT_SARIF_XSL}'
+        # For CMake-based projects, use a compile_commands.json file as the input for analysis. 
+        input: build/compile_commands.json
+        # Uncomment if you are using C/C++test 2020.2 to generate a SARIF report:
+        # reportFormat: xml,html,custom
+        # additionalParams: '-property report.custom.extension=sarif -property report.custom.xsl.file=${PARASOFT_SARIF_XSL}'
+        additionalParams: -showdetails -exclude "**/googletest/**" -exclude "**/tests/**" -exclude "**/googlemock/**"
 
     # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
     - name: Upload results (SARIF)
       if: always()
-      uses: github/codeql-action/upload-sarif@v1
+      uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: reports/report.sarif
     
     # Uploads an archive that includes all report files (.xml, .html, .sarif).
     - name: Archive reports
       if: always()
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
-<<<<<<< HEAD
+        name: CpptestReports
+        path: reports/*.*
+
+  build:
+    runs-on: self-hosted
+    continue-on-error: true
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Configure CMake
+      shell: bash
+      working-directory: ${{github.workspace}}
+      run: cmake -DCPPTEST_COVERAGE=ON -S . -B build
+
+    - name: Build 
+      working-directory: ${{github.workspace}}
+      shell: bash
+      # Execute the build.  You can specify a specific target with "--target <NAME>"
+      run: cmake --build build
+
+    - name: Run Tests
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      run: rm -rf /cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog && ctest || true 
+
+    - name: Generate Reports
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report 
+ 
+    - name: Archive reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
         name: CoverageReports
         path: |
           .coverage/*.*
@@ -71,7 +118,3 @@ jobs:
       shell: bash
       # Query for project's coverage and compare with the gate requirements
       run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $MCDC_COV_GATE%, achieved $NUMBER%"; false; else echo "MC/DC coverage quality gate passed with $NUMBER% (required $MCDC_COV_GATE%)"; true; fi  
-=======
-        name: Static analysis reports
-        path: reports/*.*
->>>>>>> fe4c916c5f0d2575bf5dca88cde9f58bfb874333

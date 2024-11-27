@@ -1,4 +1,4 @@
-name: Unit testing with coverage (master)
+name: Unit testing with coverage (branch)
 
 on:
   push:
