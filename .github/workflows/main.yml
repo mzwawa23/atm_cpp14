@@ -94,7 +94,7 @@ jobs:
       working-directory: ${{github.workspace}}/build
       shell: bash
       #run: rm -rf /cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog && ctest || true 
-      run: ./atm_gtest --gtest_output="xml:atm_cpp14.xml 
+      run: ./atm_gtest
 
     - name: Generate Reports
       working-directory: ${{github.workspace}}/build
