@@ -1,7 +1,6 @@
 #include "Account.hxx"
 #include "ATM.hxx"
 #include "BaseDisplay.hxx"
-
 #include <utility>
 
 // C++11/14: move constructor
@@ -16,7 +15,7 @@ Account::Account(Account&& a):
 
 Account::Account(double initial): myBalance(initial)
 {
-	if (initial) { // parasoft-suppress MISRACPP2023-7_0_2-a "ok in this case"
+	if (initial) { 
 	    myTransactions.emplace_back(UserRequest::REQUEST_DEPOSIT, initial);
 	} else {
 	    myTransactions.emplace_back(UserRequest::REQUEST_WITHDRAW, initial);
