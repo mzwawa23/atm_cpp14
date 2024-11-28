@@ -2,7 +2,7 @@
 <<<<<<< HEAD
     "cpptest.testConfiguration": "/home/marcin/work/source/github/atm_cpp14/conf/Recommended Rules.properties",
 =======
-    "cpptest.testConfiguration": "builtin://MISRA C++ 2023",
+    "cpptest.testConfiguration": "conf/Recommended Rules.properties",
 >>>>>>> fe4c916c5f0d2575bf5dca88cde9f58bfb874333
     "editor.tokenColorCustomizations": {
         "textMateRules": [

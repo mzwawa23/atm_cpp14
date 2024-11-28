@@ -2,6 +2,7 @@
 .settings/
 .coverage/
 .cpptest/
+reports/
 build/
 obj/
 ATM_Cpp14_lib.a
