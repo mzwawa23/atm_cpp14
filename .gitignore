@@ -1,5 +1,7 @@
 *.bdf
 .settings/
+.coverage/
+.cpptest/
 build/
 obj/
 ATM_Cpp14_lib.a
