@@ -72,7 +72,7 @@ jobs:
         name: CpptestReports
         path: reports/*.*
 
-  build:
+  build_with_ut_ccov:
     runs-on: self-hosted
     continue-on-error: true
 
