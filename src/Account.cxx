@@ -2,6 +2,21 @@
 #include "ATM.hxx"
 #include "BaseDisplay.hxx"
 #include <utility>
+#include <stdio.h>
+
+class IOException {};
+
+int* writeDataToFile(FILE* file, int* pSize)
+{
+	fscanf(file, "%d", pSize);
+	int* data = new int[*pSize];
+	for (int i = 0; i < *pSize; i++) {
+		if (fscanf(file, "%d", &data[i]) == EOF) {
+			throw IOException();
+		}
+	}
+	return data;
+}
 
 // C++11/14: move constructor
 Account::Account(Account&& a):
