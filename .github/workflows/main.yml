@@ -107,7 +107,7 @@ jobs:
       
     - name: Archive reports
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: CpptestReports
         path: ${{github.workspace}}/.coverage/*.*
