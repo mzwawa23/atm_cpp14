@@ -100,7 +100,7 @@ jobs:
     - name: Generate Reports
       working-directory: ${{github.workspace}}/build
       shell: bash
-      run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report echo ${{github.workspace}}
+      run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report
  
     - name: Setup Pages
       uses: actions/configure-pages@v3
