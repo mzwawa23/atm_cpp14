@@ -101,18 +101,24 @@ jobs:
       working-directory: ${{github.workspace}}/build
       shell: bash
       run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report
- 
-    - name: Setup Pages
-      uses: actions/configure-pages@v3
-      
+
+
     - name: Archive reports
       if: always()
       uses: actions/upload-artifact@v3
       with:
         name: CpptestReports
-        path: ${{github.workspace}}/.coverage/*.*
+        path: ${{github.workspace}}/.coverage
 
-    - name: Deploy to GitHub pages
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+
+    - name: Upload Artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        name: ${{github.workspace}}/.coverage
+
+    - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v2
 
