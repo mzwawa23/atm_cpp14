@@ -87,7 +87,12 @@ jobs:
     - name: Echo build id
       shell: bash
       working-directory: ${{github.workspace}}
-      run: echo "The new build id is ${{ env.build_id }}"
+      run: echo "The new build id is ${{env.build_id}}"
+
+    - name: Echo github.workspace
+      shell: bash
+      working-directory: ${{github.workspace}}
+      run: echo "The github.workspace is ${{github.workspace}}"
 
     - name: Configure CMake
       shell: bash
