@@ -79,6 +79,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Set build id
+      shell: bash
+      working-directory: ${{github.workspace}}
+      run: echo "build_id=build-$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV 
+
+    - name: Echo build id
+      shell: bash
+      working-directory: ${{github.workspace}}
+      run: echo "The new build id is ${{ env.build_id }}"
+
     - name: Configure CMake
       shell: bash
       working-directory: ${{github.workspace}}
@@ -89,6 +99,12 @@ jobs:
       shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
       run: cmake --build build
+
+    - name: Coverage Logs Cleanup
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      # Execute the build.  You can specify a specific target with "--target <NAME>"
+      run: rm -rf cpptest-coverage/*/*.clog
 
     - name: Run Tests
       working-directory: ${{github.workspace}}/build
@@ -102,13 +118,12 @@ jobs:
       shell: bash
       run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report
 
-
-    - name: Archive reports
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: CpptestReports
-        path: ${{github.workspace}}/.coverage
+#    - name: Archive reports
+#      if:# always()
+#      uses: actions/upload-artifact@v4
+#      with:
+#        name: CoverageReports
+#        path: .coverage/*.*
 
     - name: Setup Pages
       uses: actions/configure-pages@v3
