@@ -55,7 +55,7 @@ jobs:
         # Uncomment if you are using C/C++test 2020.2 to generate a SARIF report:
         # reportFormat: xml,html,custom
         # additionalParams: '-property report.custom.extension=sarif -property report.custom.xsl.file=${PARASOFT_SARIF_XSL}'
-        additionalParams: -showdetails -exclude "**/googletest/**" -exclude "**/tests/**" -exclude "**/googlemock/**" -property scontrol.rep1.git.workspace=/home/marcin/work/source/github/actions-runner/atm_cpp14/_work/atm_cpp14/atm_cpp14 -property scontrol.rep1.git.url=https://github.com/mzwawa23/atm_cpp14
+        additionalParams: -showdetails -exclude "**/googletest/**" -exclude "**/tests/**" -exclude "**/googlemock/**" -property scontrol.rep1.git.workspace=${{github.workspace}} -property scontrol.rep1.git.url=https://github.com/mzwawa23/atm_cpp14
 
     # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
     - name: Upload results (SARIF)
@@ -133,7 +133,7 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-pages-artifact@v2
       with:
-      path: ${{github.workspace}}/.coverage
+        path: ${{github.workspace}}/.coverage
       
     - name: Deploy to GitHub Pages
       id: deployment
