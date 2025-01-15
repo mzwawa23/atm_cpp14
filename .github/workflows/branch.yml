@@ -116,10 +116,11 @@ jobs:
       
     - name: Archive reports
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: CoverageReports
-        path: .coverage/*.*
+        path: |
+          ${{github.workspace}}/.coverage
       
     - name: Setup Pages
       uses: actions/configure-pages@v3
