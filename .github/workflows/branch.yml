@@ -1,8 +1,8 @@
-name: SCA and UT build with execution (master)
+name: SCA and UT build with execution (branch)
 
 on:
   push:
-    branches: [ feature_branch* ]
+    branches: [ feature* ]
 
 env:
   LINE_COV_GATE: 20
@@ -72,51 +72,81 @@ jobs:
         name: CpptestReports
         path: reports/*.*
 
+  
   build_with_ut_ccov:
     runs-on: self-hosted
     continue-on-error: true
-
+      
     steps:
     - uses: actions/checkout@v2
-
+      
+    - name: Set build id
+      shell: bash
+      working-directory: ${{github.workspace}}
+      run: echo "build_id=build-$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV 
+      
     - name: Configure CMake
       shell: bash
       working-directory: ${{github.workspace}}
       run: cmake -DCPPTEST_COVERAGE=ON -S . -B build
-
+      
     - name: Build 
       working-directory: ${{github.workspace}}
       shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
       run: cmake --build build
-
+      
+    - name: Coverage Logs Cleanup
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      # Execute the build.  You can specify a specific target with "--target <NAME>"
+      run: rm -rf cpptest-coverage/*/*.clog
+      
     - name: Run Tests
       working-directory: ${{github.workspace}}/build
       if: always()
       continue-on-error: true
       shell: bash
       run: ./atm_gtest
-
+      
     - name: Generate Reports
       working-directory: ${{github.workspace}}/build
       shell: bash
-      run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report 
- 
+      run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report
+      
     - name: Archive reports
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: CpptestReports
+        name: CoverageReports
         path: .coverage/*.*
-
+      
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+      
+    - name: Fix permissions
+      run: |
+          chmod -c -R +rX "_site/" | while read line; do
+            echo "::warning title=Invalid file permissions automatically fixed::$line"
+          done
+      
+    - name: Upload Artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+      path: ${{github.workspace}}/.coverage
+      
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2
+      
     - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
-      # Query for project's coverage and compare with the gate requirements
-      run: NUMBER=$(cpptestcov query -coverage LC .coverage) && if [ $NUMBER -lt $LINE_COV_GATE ]; then echo "Line coverage quality gate failed"; echo "Expected result $LINE_COV_GATE%, achieved $NUMBER%"; false; else echo "Line coverage quality gate passed with $NUMBER% (required $LINE_COV_GATE%)"; true; fi      
-      
+      # Query for project's coverage and compare with the gate requirements     
+      run: NUMBER=$(cpptestcov query -coverage LC .coverage) && if [[ $NUMBER -lt $LINE_COV_GATE ]]; then echo "Line coverage quality gate failed"; echo "Expected result $LINE_COV_GATE%, echieved $NUMBER%"; echo "Check html report https://mzwawa23.github.io/atm_cpp14/report.html"; false; else echo "Line coverage quality gate passed with $NUMBER% (required $LINE_COV_GATE %)"; echo "check html report https://mzwawa23.github.io/atm_cpp14/report.html for details"; true; fi      
+            
     - name: MCDC Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements
-      run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $MCDC_COV_GATE%, achieved $NUMBER%"; false; else echo "MC/DC coverage quality gate passed with $NUMBER% (required $MCDC_COV_GATE%)"; true; fi  
+      run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [[ $NUMBER -lt $MCDC_COV_GATE ]]; then echo "MCDC coverage quality gate failed"; echo "Expected result $MCDC_COV_GATE%, echieved $NUMBER%"; echo "Check html report https://mzwawa23.github.io/atm_cpp14/report.html"; false; else echo "MCDC coverage quality gate passed with $NUMBER% (required $MCDC_COV_GATE%)"; echo "check html report https://mzwawa23.github.io/atm_cpp14/report.html for details"; true; fi      
