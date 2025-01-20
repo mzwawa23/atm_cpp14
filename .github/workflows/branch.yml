@@ -31,6 +31,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
 
+    - name: Clean github workspace
+      shell: bash
+      working-directory: ${{github.workspace}}
+      run: rm -rf *.*
+
     # Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
     - name: Checkout code
       uses: actions/checkout@v4
@@ -72,7 +77,24 @@ jobs:
         name: CpptestReports
         path: reports/*.*
 
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+        
+    - name: Upload Artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: ${{github.workspace}}/.coverage
+        
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2
   
+    - name: View HTML report
+      working-directory: ${{github.workspace}}
+      shell: bash
+      run: echo "View html SCA report https://mzwawa23.github.io/atm_cpp14/report.html for details"    
+      
+      
   build_with_ut_ccov:
     runs-on: self-hosted
     continue-on-error: true
