@@ -83,7 +83,7 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-pages-artifact@v2
       with:
-        path: ${{github.workspace}}/.coverage
+        path: ${{github.workspace}}/reports
         
     - name: Deploy to GitHub Pages
       id: deployment
@@ -94,7 +94,7 @@ jobs:
       shell: bash
       run: echo "View html SCA report https://mzwawa23.github.io/atm_cpp14/report.html for details"    
       
-      
+
   build_with_ut_ccov:
     runs-on: self-hosted
     continue-on-error: true
