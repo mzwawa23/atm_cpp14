@@ -12,6 +12,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
 
 jobs:
   run-cpptest-SCA:
@@ -143,7 +144,7 @@ jobs:
 
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v4
+      uses: actions/deploy-pages@v4.0.3
 
     - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
