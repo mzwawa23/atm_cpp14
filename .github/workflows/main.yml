@@ -136,14 +136,14 @@ jobs:
         done
 
     - name: Upload Artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v4
       with:
         name: CoverageReports
         path: ${{github.workspace}}/.coverage
 
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v3
+      uses: actions/deploy-pages@v4
 
     - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
