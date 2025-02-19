@@ -442,25 +442,27 @@ void TestSuite_ATM_cxx_a1e971d1::test_fillUserRequest_9()
 /* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_1()
 {
+	/* @req ATM-509 */
     /* Pre-condition initialization */
     /* Initializing argument 0 (this) */ 
         /* Initializing constructor argument 1 (bank) */ 
-        ::Bank * _bank_0  = 0 ;
+        ::Bank _bank_0_1 ;
+        ::Bank * _bank_0  = & _bank_0_1;
         /* Initializing constructor argument 2 (display) */ 
-        ::BaseDisplay * _display_0  = 0 ;
+        ::BaseDisplay _display_0_2 ;
+        ::BaseDisplay * _display_0  = & _display_0_2;
     ::ATM _cpptest_TestObject (_bank_0, _display_0);
 
     /* Initializing argument 1 (accountNumber) */ 
-    int _accountNumber  = -1;
+    int _accountNumber  = 1000;
     /* Initializing argument 2 (password) */ 
-    ::std::string _password  = "";
+    ::std::string _password  = "Invalid account";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
-    CPPTEST_POST_CONDITION_PTR("Account * _cpptest_TestObject.myCurrentAccount ", ( _cpptest_TestObject.myCurrentAccount ));
-    CPPTEST_POST_CONDITION_PTR("Bank * _cpptest_TestObject.myBank ", ( _cpptest_TestObject.myBank ));
-    CPPTEST_POST_CONDITION_PTR("BaseDisplay * _cpptest_TestObject.myDisplay ", ( _cpptest_TestObject.myDisplay ));
-}
+    CPPTEST_ASSERT_EQUAL(NULL, ( _cpptest_TestObject.myCurrentAccount ));
+    CPPTEST_ASSERT(0 != ( _cpptest_TestObject.myBank ));
+    CPPTEST_ASSERT(0 != ( _cpptest_TestObject.myDisplay ));
 /* CPPTEST_TEST_CASE_END test_viewAccount_1 */
 
 /* CPPTEST_TEST_CASE_BEGIN test_viewAccount_10 */
@@ -495,25 +497,27 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_10()
 /* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_2()
 {
-    /* Pre-condition initialization */
+	/* @req ATM-509 */
+	/* Pre-condition initialization */
     /* Initializing argument 0 (this) */ 
         /* Initializing constructor argument 1 (bank) */ 
         ::Bank _bank_0_1 ;
         ::Bank * _bank_0  = & _bank_0_1;
         /* Initializing constructor argument 2 (display) */ 
-        ::BaseDisplay * _display_0  = 0 ;
+        ::BaseDisplay _display_0_2 ;
+        ::BaseDisplay * _display_0  = & _display_0_2;
     ::ATM _cpptest_TestObject (_bank_0, _display_0);
 
     /* Initializing argument 1 (accountNumber) */ 
-    int _accountNumber  = -1;
+    int _accountNumber  = 5;
     /* Initializing argument 2 (password) */ 
-    ::std::string _password  = "";
+    ::std::string _password  = "test";
     /* Tested function call */
     _cpptest_TestObject.viewAccount(_accountNumber, _password);
     /* Post-condition check */
-    CPPTEST_POST_CONDITION_PTR("Account * _cpptest_TestObject.myCurrentAccount ", ( _cpptest_TestObject.myCurrentAccount ));
-    CPPTEST_POST_CONDITION_PTR("Bank * _cpptest_TestObject.myBank ", ( _cpptest_TestObject.myBank ));
-    CPPTEST_POST_CONDITION_PTR("BaseDisplay * _cpptest_TestObject.myDisplay ", ( _cpptest_TestObject.myDisplay ));
+    CPPTEST_ASSERT_EQUAL(NULL, ( _cpptest_TestObject.myCurrentAccount ));
+    CPPTEST_ASSERT(0 != ( _cpptest_TestObject.myBank ));
+    CPPTEST_ASSERT(0 != ( _cpptest_TestObject.myDisplay ));
 }
 /* CPPTEST_TEST_CASE_END test_viewAccount_2 */
 
@@ -521,7 +525,8 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_2()
 /* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_3()
 {
-    /* Pre-condition initialization */
+	/* @req ATM-509 */
+	/* Pre-condition initialization */
     /* Initializing argument 0 (this) */ 
         /* Initializing constructor argument 1 (bank) */ 
         ::Bank _bank_0_1 ;
@@ -599,7 +604,8 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_5()
 /* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_6()
 {
-    /* Pre-condition initialization */
+	/* @req ATM-509 */
+	/* Pre-condition initialization */
     /* Initializing argument 0 (this) */ 
         /* Initializing constructor argument 1 (bank) */ 
         ::Bank _bank_0_1 ;

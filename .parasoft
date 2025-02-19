@@ -1,11 +1,11 @@
-#Fri Nov 29 16:42:52 CET 2019
+#Wed Feb 19 11:19:15 CET 2025
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.advanced.options=
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.cdt.configuration=CPPTEST_USE_ACTIVE_CONFIG
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.command.c.linux.x86=gcc
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.command.c.win32.x86=gcc
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.command.cpp.linux.x86=g++
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.command.cpp.win32.x86=g++
-/ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.family.linux.x86=gcc_7-64
+/ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.family.linux.x86=gcc_9-64
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.family.win32.x86=gcc_7-64
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.options.linux.x86=${cpptest\:original_options} -DPARASOFT_CPPTEST
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.options.win32.x86=${cpptest\:original_options} -DPARASOFT_CPPTEST

@@ -3,7 +3,7 @@
 
 
 TEST(BaseDisplay, getType) {
-  ::testing::Test::RecordProperty("req", "ATM_test-522");
+  ::testing::Test::RecordProperty("req", "ATM_514");
   BaseDisplay disp;
   ASSERT_EQ(disp.getType(), BaseDisplay::SECURE);
 }

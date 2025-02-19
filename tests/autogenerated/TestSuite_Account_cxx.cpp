@@ -26,9 +26,9 @@ class TestSuite_Account_cxx_15e9a265 : public CppTest_TestSuite
 
         void test_case_unknown_display();
         void test_case_secure_display();
-        static void CppTest_StubCallback_test_case_secure_display_1_BaseDisplay_getType(CppTest_StubCallInfo* stubCallInfo, ::BaseDisplay::DisplayType* __return, ::BaseDisplay* __this);//CPPTEST_TEST_CASE_CALLBACK void test_case_secure_display();
+        static void CppTest_StubCallback_test_case_secure_display_1_BaseDisplay_getType(CppTest_StubCallInfo* stubCallInfo, ::BaseDisplay::DisplayType* __return, ::BaseDisplay* __this); /* CPPTEST_TEST_CASE_CALLBACK void test_case_secure_display(); */
         void test_case_desposit_operations();
-        static void CppTest_StubCallback_test_case_desposit_operations_1_BaseDisplay_getType(CppTest_StubCallInfo* stubCallInfo, ::BaseDisplay::DisplayType* __return, ::BaseDisplay* __this);//CPPTEST_TEST_CASE_CALLBACK void test_case_desposit_operations();
+        static void CppTest_StubCallback_test_case_desposit_operations_1_BaseDisplay_getType(CppTest_StubCallInfo* stubCallInfo, ::BaseDisplay::DisplayType* __return, ::BaseDisplay* __this); /* CPPTEST_TEST_CASE_CALLBACK void test_case_desposit_operations(); */
         void test_case_manual();
 };
 
@@ -146,6 +146,7 @@ CPPTEST_ASSERT_CSTR_N_EQUAL("", _cpptest_TestObject.myPassword.c_str(), 256);
 /* CPPTEST_TEST_CASE_END test_case_unknown_display */
 
 /* CPPTEST_TEST_CASE_BEGIN test_case_secure_display */
+/* CPPTEST_TEST_CASE_DESCRIPTION  /* @req ATM-519 */ */
 // @REQ REQ-123, REQ-345
 /* CPPTEST_TEST_CASE_CALLBACKS_BEGIN */
 void TestSuite_Account_cxx_15e9a265::CppTest_StubCallback_test_case_secure_display_1_BaseDisplay_getType(CppTest_StubCallInfo* stubCallInfo, ::BaseDisplay::DisplayType* __return, ::BaseDisplay* __this)
@@ -253,6 +254,7 @@ CPPTEST_ASSERT_CSTR_N_EQUAL("", _cpptest_TestObject.myPassword.c_str(), 256);
 /* CPPTEST_TEST_CASE_END test_case_secure_display */
 
 /* CPPTEST_TEST_CASE_BEGIN test_case_desposit_operations */
+/* CPPTEST_TEST_CASE_DESCRIPTION  /* @req ATM-510 */ */
 // @REQ REQ-345
 /* CPPTEST_TEST_CASE_CONTEXT int Account::listTransactions(BaseDisplay &, UserRequest) */
 /* CPPTEST_TEST_CASE_CALLBACKS_BEGIN */
