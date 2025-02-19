@@ -123,7 +123,7 @@ jobs:
     - name: Publish Reports to DTP
       working-directory: ${{github.workspace}}/build
       shell: bash
-      run: cpptestcov report dtp -coverage="LC,SC,BC,DC,SCC,MCDC,FC,CC" ../.coverage  atm_cpp14.xml -root .. -settings ../cpptestcli.properties
+      run: cpptestcov report dtp -coverage="LC,SC,BC,DC,SCC,MCDC,FC,CC" ../.coverage  atm_cpp14.xml -root .. -settings ../cpptestcli.properties -property report.coverage.images=AllCov;gtestCov
 
 
 #    - name: Archive reports
