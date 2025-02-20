@@ -126,12 +126,12 @@ jobs:
       run: cpptestcov report dtp -coverage="LC,SC,BC,DC,SCC,MCDC,FC,CC" ../.coverage  atm_cpp14.xml -root .. -settings ../cpptestcli.properties -property report.coverage.images="AllCov;gtestCov"
 
 
-#    - name: Archive reports
-#      if:# always()
-#      uses: actions/upload-artifact@v4
-#      with:
-#        name: CoverageReports
-#        path: .coverage/*.*
+    - name: Archive reports
+      if:# always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: CoverageReports
+        path: .coverage/*.*
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
