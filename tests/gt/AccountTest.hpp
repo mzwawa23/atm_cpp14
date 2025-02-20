@@ -61,7 +61,7 @@ TEST(Account, debitSimple) {
 }
 
 // TEST(Account, getBalanceInitBad) {
-//  ::testing::Test::RecordProperty("req", "ATM_test-520");
+//  ::testing::Test::RecordProperty("req", "ATM_test-510");
 //   const double initial = 223.0;
 //   Account acct(initial);
 //   ASSERT_EQ(acct.getBalance(), initial - 1.0);
