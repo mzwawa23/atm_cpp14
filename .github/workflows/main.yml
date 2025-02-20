@@ -148,9 +148,9 @@ jobs:
         name: CoverageReports
         path: ${{github.workspace}}/.coverage
 
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+  #  - name: Deploy to GitHub Pages
+  #    id: deployment
+  #    uses: actions/deploy-pages@v4
 
     - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
