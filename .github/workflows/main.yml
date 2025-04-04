@@ -132,7 +132,6 @@ jobs:
       with:
         name: CoverageReports
         path: ${{github.workspace}}/.coverage
-              ${{github.workspace}}/build/cpptest-coverage/*.*
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
