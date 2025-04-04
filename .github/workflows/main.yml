@@ -131,7 +131,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: CoverageReports
-        path: .coverage/*.*
+        path: ${{github.workspace}}/.coverage
               ${{github.workspace}}/build/cpptest-coverage/*.*
 
     - name: Setup Pages
