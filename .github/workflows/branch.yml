@@ -5,7 +5,7 @@ on:
     branches: [ feature* ]
 
 env:
-  LINE_COV_GATE: 20
+  LINE_COV_GATE: 30
   MCDC_COV_GATE: 30
 
 permissions:

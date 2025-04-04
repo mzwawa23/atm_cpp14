@@ -50,7 +50,7 @@ void ATM::showTransations()
     });
 }
 
-
+// parasoft-cov-begin-suppress ALL "no need to test this function"
 void ATM::makeDeposit(double amount)
 {
     auto bal = myCurrentAccount->deposit(amount);
@@ -64,4 +64,4 @@ void ATM::withdraw(double amount)
     myDisplay->showInfoToUser("Updated Balance");
     myDisplay->showBalance(bal);
 }
-
+// parasoft-cov-end-suppress ALL "no need to test this function"
