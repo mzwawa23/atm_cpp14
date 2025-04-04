@@ -120,18 +120,17 @@ jobs:
       shell: bash
       run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report
     
-    - name: Publish Reports to DTP
-      working-directory: ${{github.workspace}}/build
-      shell: bash
-      run: cpptestcov report dtp -coverage="LC,SC,BC,DC,SCC,MCDC,FC,CC" ../.coverage  atm_cpp14.xml -root .. -settings ../cpptestcli.properties -property report.coverage.images="AllCov;gtestCov"
-
-
-    - name: Archive reports
+      - name: Archive reports
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: CoverageReports
         path: ${{github.workspace}}/.coverage
+              
+    - name: Publish Reports to DTP
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      run: cpptestcov report dtp -coverage="LC,SC,BC,DC,SCC,MCDC,FC,CC" ../.coverage  atm_cpp14.xml -root .. -settings ../cpptestcli.properties -property report.coverage.images="AllCov;gtestCov"
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
