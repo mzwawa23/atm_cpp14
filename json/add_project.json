@@ -1,0 +1,8 @@
+{
+  "active": true,
+  "startDate": "2023-10-01",
+  "endDate": "2026-10-31",
+  "label": "string",
+  "name": "test_ATM",
+  "description": "string"
+}

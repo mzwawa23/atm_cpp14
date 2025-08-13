@@ -1,0 +1,32 @@
+{
+  "project": {
+    "label": "test_ATM",
+    "name": "test_ATM",
+    "id": 23,
+    "description": "string"
+  },
+  "autoAddNewRunConfigurations": "none",
+  "isDefaultForProject": true,
+  "excludedPriorities": {
+    "staticAnalysisPriorities": [
+      "string"
+    ]
+  },
+  "runConfigurations": [
+    {
+      "projectName": "test_ATM",
+      "engine": "DTP Engine for C/C++",
+      "testConfiguration": "Recommended Rules",
+      "sessionTag": "feature_branches",
+      "deprecated": false,
+      "label": "string",
+      "name": "string",
+      "id": 96,
+      "description": "string"
+    }
+  ],
+  "label": "test_ATM_feature_branches",
+  "name": "test_ATM_feature_branches",
+  "id": 41,
+  "description": "string"
+}

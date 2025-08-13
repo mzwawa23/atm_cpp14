@@ -1,0 +1,10 @@
+{
+  "projectName": "test_ATM",
+  "engine": "DTP Engine for C/C++",
+  "testConfiguration": "Recommended Rules",
+  "sessionTag": "feature_branches",
+  "deprecated": true,
+  "label": "string",
+  "name": "string",
+  "description": "string"
+}
