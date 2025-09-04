@@ -14,7 +14,7 @@ cmake_minimum_required(VERSION 3.11)
 message(STATUS " ... STARTING ...")
 
 set(TARGET_NAME ATM_Cpp14_lib)
-
+set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(${TARGET_NAME}
