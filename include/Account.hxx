@@ -10,6 +10,8 @@
 
 #include "ATM.hxx"
 
+int processData(int value);
+
 class Account
 {
     public:
