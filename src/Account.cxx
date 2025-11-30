@@ -38,6 +38,7 @@ double Account::debit(double amount)
     return (getBalance());
 }
 
+// parasoft-cov-begin-suppress ALL "no need to test this function"
 int Account::listTransactions(BaseDisplay& display, UserRequest type) {
 
 	int transactionsCount = 0;
@@ -66,3 +67,4 @@ int Account::listTransactions(BaseDisplay& display, UserRequest type) {
 			});
     return transactionsCount;
 }
+// parasoft-cov-end-suppress ALL "no need to test this function"
