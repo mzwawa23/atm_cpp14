@@ -61,7 +61,7 @@ jobs:
         # Uncomment if you are using C/C++test 2020.2 to generate a SARIF report:
         # reportFormat: xml,html,custom
         # additionalParams: '-property report.custom.extension=sarif -property report.custom.xsl.file=${PARASOFT_SARIF_XSL}'
-        additionalParams: -showdetails -exclude "**/googletest/**" -exclude "**/tests/**" -exclude "**/googlemock/**" -property scontrol.rep1.git.workspace=${{github.workspace}} -property scontrol.rep1.git.url=https://github.com/mzwawa23/atm_cpp14
+        additionalParams: -showdetails -exclude "**/googletest/**" -exclude "**/tests/**" -exclude "**/googlemock/**" -property scontrol.rep1.git.workspace=${{github.workspace}} -property scontrol.rep1.git.url=https://github.com/mzwawa23/atm_cpp14 -publish
 
     # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
     - name: Upload results (SARIF)
