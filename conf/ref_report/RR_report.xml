@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8'?><ResultsSession buildId="ATM_Cpp14-2026-01-21" climode="true" endTime="2026-01-21T21:32:16+01:00" execEnv="linux_x86_64" hasViols="true" id="1768428373305" lang="en" machine="continental" prjModule="atm_cpp14" project="ATM_Cpp14" scBranch="main" tag="main-linux_x86_64" time="2026-01-21T21:32:11+01:00" toolDispName="C/C++test" toolId="c++test" toolName="DTP Engine for C/C++" toolVer="2025.2.0" user="marcin">
+   <TestParameters cmdLn="cpptestcli -compiler gcc_9-64 -config conf/Recommended Rules.properties -report /home/marcin/work/source/github/atm_cpp14/reports -module . -exclude **/googletest/** -exclude **/tests/** -exclude **/googlemock/** -input build/compile_commands.json"/>
+   <TestConfig machine="continental" name="Recommended Rules" pseudoUrl="conf/Recommended Rules.properties" user="marcin"/>
+   <Authors>
+      <Author id="dev1" name="mzwawa23"/>
+   </Authors>
+   <Analyzers>
+      <Analyzer id="com.parasoft.xtest.scope.analyzer" name="Scope Analyzer" ver="10.7.3.20251030"/>
+      <Analyzer id="com.parasoft.xtest.cpp.analyzer.static.code" name="Parasoft C/C++ Code Analyzer" ver="10.7.3.20251120B2842"/>
+      <Analyzer id="com.parasoft.xtest.dupcode.parser" name="Code Duplication Parser" ver="10.7.3.20251030"/>
+      <Analyzer id="com.parasoft.xtest.cpp.analyzer.static.pattern" name="Parasoft C/C++ Static Analyzer" ver="10.7.3.20251120B2842"/>
+      <Analyzer id="com.parasoft.xtest.cpp.analyzer.static.flow" name="Parasoft C/C++ Flow Analyzer" ver="10.7.3.20251014B6172"/>
+      <Analyzer id="com.parasoft.xtest.cpp.analyzer.static.metrics" name="Parasoft C/C++ Metrics Analyzer" ver="10.7.3.20251120B2842"/>
+      <Analyzer id="com.parasoft.xtest.cpp.analyzer.static.dupcode" name="Code Duplication Detector" ver="10.7.3.20251030"/>
+      <Analyzer id="com.parasoft.xtest.cpp.analyzer.static.global" name="Parasoft C/C++ Global Static Analyzer" ver="10.7.3.20251120B2842"/>
+   </Analyzers>
+   <VersionInfos>
+      <StorageInfo ownerId="" resultId="ISetupResult" ver="1" ver10x="1"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IMetricsViolation" ver="2" ver10x="1"/>
+      <StorageInfo ownerId="" resultId="IExecutionViolation" ver="1" ver10x="1"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IDupCodeViolation" ver="2" ver10x="1"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IFlowAnalysisViolation" ver="2" ver10x="1"/>
+      <StorageInfo ownerId="" resultId="IFunctionalViolation" ver="1" ver10x="1"/>
+      <StorageInfo ownerId="" resultId="IChangeImpactViolation" ver="1" ver10x="1"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="ICodingStandardsViolation" ver="2" ver10x="1"/>
+      <StorageInfo ownerId="" resultId="IUnitTestViolation" ver="1" ver10x="1"/>
+   </VersionInfos>
+   <Goals tsks="19">
+      
+   </Goals>
+   <Scope>
+      <Repositories>
+         <Rep repRef="1" type="git" url="https://github.com/mzwawa23/atm_cpp14"/>
+      </Repositories>
+      <Locations>
+         <Loc auth="marcin" branch="main" hash="-810795966" locRef="1" projId="atm_cpp14" projPath="/atm_cpp14" project="atm_cpp14" repRef="1" resProjPath="src/Account.cxx" rev="f4a1c571a866e6045446d2f2d396777bfced4c38" scPath="src/Account.cxx" totLns="70" uri="file:/home/marcin/work/source/github/atm_cpp14/src/Account.cxx"/>
+         <Loc auth="marcin" branch="main" hash="-1370005397" locRef="2" projId="atm_cpp14" projPath="/atm_cpp14" project="atm_cpp14" repRef="1" resProjPath="src/ATM.cxx" rev="efd130f3d12d031d5940a76cd3e7f84f297cb8f6" scPath="src/ATM.cxx" totLns="65" uri="file:/home/marcin/work/source/github/atm_cpp14/src/ATM.cxx"/>
+         <Loc auth="marcin" branch="main" hash="1497090602" locRef="3" projId="atm_cpp14" projPath="/atm_cpp14" project="atm_cpp14" repRef="1" resProjPath="src/Bank.cxx" rev="191eb2c28f016318222e2b54c39e3caffcdb89cc" scPath="src/Bank.cxx" totLns="41" uri="file:/home/marcin/work/source/github/atm_cpp14/src/Bank.cxx"/>
+         <Loc auth="marcin" branch="main" hash="-812920828" locRef="4" projId="atm_cpp14" projPath="/atm_cpp14" project="atm_cpp14" repRef="1" resProjPath="src/BaseDisplay.cxx" rev="25026470a91edf9342753c7e10dc314ff1190ab0" scPath="src/BaseDisplay.cxx" totLns="43" uri="file:/home/marcin/work/source/github/atm_cpp14/src/BaseDisplay.cxx"/>
+         <Loc auth="marcin" branch="main" hash="2068051207" locRef="5" projId="atm_cpp14" projPath="/atm_cpp14" project="atm_cpp14" repRef="1" resProjPath="include/Account.hxx" rev="86d4ba27f3250580bc05c2b50d76d90325848b0a" scPath="include/Account.hxx" totLns="80" uri="file:/home/marcin/work/source/github/atm_cpp14/include/Account.hxx"/>
+         <Loc auth="marcin" branch="main" hash="365519495" locRef="6" projId="atm_cpp14" projPath="/atm_cpp14" project="atm_cpp14" repRef="1" resProjPath="include/Bank.hxx" rev="25026470a91edf9342753c7e10dc314ff1190ab0" scPath="include/Bank.hxx" totLns="26" uri="file:/home/marcin/work/source/github/atm_cpp14/include/Bank.hxx"/>
+         <Loc auth="marcin" branch="main" hash="1586671268" locRef="7" projId="atm_cpp14" projPath="/atm_cpp14" project="atm_cpp14" repRef="1" resProjPath="include/ATM.hxx" rev="25026470a91edf9342753c7e10dc314ff1190ab0" scPath="include/ATM.hxx" totLns="42" uri="file:/home/marcin/work/source/github/atm_cpp14/include/ATM.hxx"/>
+         <Loc auth="marcin" branch="main" hash="14023177" locRef="8" projId="atm_cpp14" projPath="/atm_cpp14" project="atm_cpp14" repRef="1" resProjPath="include/BaseDisplay.hxx" rev="25026470a91edf9342753c7e10dc314ff1190ab0" scPath="include/BaseDisplay.hxx" totLns="25" uri="file:/home/marcin/work/source/github/atm_cpp14/include/BaseDisplay.hxx"/>
+      </Locations>
+   </Scope>
+   
+  <SetupProblems/>
+
+   <CodingStandards ownerId="com.parasoft.xtest.checkers.api.standards" time="0:00:04">
+      <Projects>
+         <Project bdCheckedFiles="0" bdTotalFiles="0" checkedFiles="8" checkedLns="392" id="atm_cpp14" name="atm_cpp14" qfixErrs="0" suppErrs="0" totErrs="19" totFiles="8" totLns="392"/>
+      </Projects>
+      
+      
+      <Rules>
+         <CategoriesList>
+            <Category authTot="0;" authUrg="0;" desc="Flow Analysis" name="BD" rules="137" total="0">
+               <Category authTot="0;" authUrg="0;" desc="Incorrect API usage" name="BD-API" rules="7" total="0"/>
+               <Category authTot="1;" authUrg="1;" desc="Possible Bugs" name="BD-PB" rules="74" total="1"/>
+               <Category authTot="0;" authUrg="0;" desc="Resources" name="BD-RES" rules="8" total="0"/>
+               <Category authTot="0;" authUrg="0;" desc="Threads &amp; Synchronization" name="BD-TRS" rules="21" total="0"/>
+            </Category>
+            <Category authTot="0;" authUrg="0;" desc="Code Duplication Detection" name="CDD" rules="4" total="0"/>
+            <Category authTot="0;" authUrg="0;" desc="Coding Conventions" name="CODSTA" rules="574" total="0">
+               <Category authTot="0;" authUrg="0;" desc="Coding Conventions for C++" name="CODSTA-CPP" rules="138" total="0"/>
+            </Category>
+            <Category authTot="0;" authUrg="0;" desc="Exceptions" name="EXCEPT" rules="27" total="0"/>
+            <Category authTot="1;" authUrg="1;" desc="Initialization" name="INIT" rules="25" total="1"/>
+            <Category authTot="0;" authUrg="0;" desc="MISRA C 2004" name="MISRA2004" rules="226" total="0"/>
+            <Category authTot="0;" authUrg="0;" desc="MISRA C++ 2023" name="MISRACPP2023" rules="277" total="0">
+               <Category authTot="2;" authUrg="2;" desc="Rule 18.4.1 (Required) Exception-unfriendly functions shall be noexcept" name="MISRACPP2023-18_4_1" rules="3" total="2"/>
+               <Category authTot="1;" authUrg="1;" desc="Rule 0.0.2 (Advisory) Controlling expressions should not be invariant" name="MISRACPP2023-0_0_2" rules="1" total="1"/>
+               <Category authTot="7;" authUrg="7;" desc="Rule 15.0.1 (Required) Special member functions shall be provided appropriately" name="MISRACPP2023-15_0_1" rules="2" total="7"/>
+            </Category>
+            <Category authTot="0;" authUrg="0;" desc="Memory and Resource Management" name="MRM" rules="68" total="0"/>
+            <Category authTot="1;" authUrg="1;" desc="Object Oriented" name="OOP" rules="63" total="1"/>
+            <Category authTot="6;" authUrg="6;" desc="Optimization" name="OPT" rules="54" total="6"/>
+            <Category authTot="0;" authUrg="0;" desc="Possible Bugs" name="PB" rules="90" total="0"/>
+         </CategoriesList>
+         <RulesList>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-API" desc="Do not pass negative values to functions expecting non-negative arguments" id="BD-API-NEGPARAM" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Always catch exceptions" id="BD-PB-EXCEPT" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Avoid signed integer overflows" id="BD-PB-INTUB" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Avoid use before initialization" id="BD-PB-NOTINIT" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Atomic objects shall be properly initialized before being accessed" id="BD-PB-NOTINITAT" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Avoid null pointer dereferencing" id="BD-PB-NP" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Avoid buffer overflow due to defining incorrect format limits" id="BD-PB-OVERFFMT" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Avoid overflow due to reading a not zero terminated string" id="BD-PB-OVERFNZT" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Avoid overflow when reading from a buffer" id="BD-PB-OVERFRD" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Avoid overflow when writing to a buffer" id="BD-PB-OVERFWR" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Avoid division by zero" id="BD-PB-ZERO" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Avoid accessing arrays out of bounds" id="BD-PB-ARRAY" sev="2" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="1;" authUrg="1;" cat="BD-PB" desc="Avoid conditions that always evaluate to the same value" id="BD-PB-CC" sev="2" total="1"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Avoid accessing collections out of bounds" id="BD-PB-COOB" sev="2" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Suspicious setting of stream flags" id="BD-PB-STREAMFLAGS" sev="3" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-PB" desc="Restore stream format" id="BD-PB-STREAMFMT" sev="3" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-RES" desc="Properly deallocate dynamically allocated resources" id="BD-RES-BADDEALLOC" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-RES" desc="Do not use resources that have been freed" id="BD-RES-FREE" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-RES" desc="Do not free resources using invalid pointers" id="BD-RES-INVFREE" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-RES" desc="Ensure resources are freed" id="BD-RES-LEAKS" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-TRS" desc="Avoid double locking" id="BD-TRS-DLOCK" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-TRS" desc="Avoid race conditions when using fork and file descriptors" id="BD-TRS-FORKFILE" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-TRS" desc="Do not abandon unreleased locks" id="BD-TRS-LOCK" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-TRS" desc="Do not acquire locks in different order" id="BD-TRS-ORDER" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-TRS" desc="Avoid race conditions while checking for the existence of a symbolic link" id="BD-TRS-SYMLINK" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-TRS" desc="Do not use blocking functions while holding a lock" id="BD-TRS-TSHL" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="0;" authUrg="0;" cat="BD-TRS" desc="The Standard Library function mtx_timedlock() shall not be invoked on a mutex that does not support timeout" id="BD-TRS-TIMEDLOCK" sev="2" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.dupcode" authTot="0;" authUrg="0;" cat="CDD" desc="Avoid function duplication" id="CDD-DUPM" sev="2" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="CODSTA" desc="Local variables should not use the same names as member variables" id="CODSTA-44" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="CODSTA" desc="Pointer should not be compared with NULL using relational operators &lt;, >, >=, &lt;=" id="CODSTA-147" sev="3" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="CODSTA" desc="Do not use string literals as operands of equality or relational operators" id="CODSTA-148" sev="3" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="CODSTA" desc="Avoid infinite loops" id="CODSTA-82" sev="3" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="CODSTA-CPP" desc="Constructors allowing for conversion should be made explicit" id="CODSTA-CPP-04" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="EXCEPT" desc="Throw by value, catch by reference" id="EXCEPT-02" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="EXCEPT" desc="Do not throw from within destructor" id="EXCEPT-03" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="1;" authUrg="1;" cat="INIT" desc="All member variables should be initialized in constructor" id="INIT-06" sev="1" total="1"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="MISRA2004" desc="Floating-point expressions shall not be tested for equality or inequality" id="MISRA2004-13_3" sev="3" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="MISRA2004" desc="All exit paths from a function with non-void return type shall have an explicit return statement with an expression" id="MISRA2004-16_8" sev="3" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="MISRA2004" desc="The address of an object with automatic storage shall not be returned from a function" id="MISRA2004-17_6_a" sev="3" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" authTot="1;" authUrg="1;" cat="MISRACPP2023-0_0_2" desc="Avoid conditions that always evaluate to the same value" id="MISRACPP2023-0_0_2-a" origId="BD-PB-CC" sev="4" total="1"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="5;" authUrg="5;" cat="MISRACPP2023-15_0_1" desc="Special member functions shall be provided appropriately" id="MISRACPP2023-15_0_1-a" origId="CODSTA-MCPP-105" sev="2" total="5"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="2;" authUrg="2;" cat="MISRACPP2023-15_0_1" desc="Destructor shall have a non-empty body" id="MISRACPP2023-15_0_1-b" origId="OPT-48" sev="2" total="2"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="2;" authUrg="2;" cat="MISRACPP2023-18_4_1" desc="Exception-unfriendly functions shall be noexcept" id="MISRACPP2023-18_4_1-a" origId="CODSTA-CPP-208" sev="2" total="2"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="MISRACPP2023-18_4_1" desc="Functions used as initializers of non-constexpr, non-local variables shall be noexcept" id="MISRACPP2023-18_4_1-b" origId="CODSTA-CPP-209" sev="2" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="MISRACPP2023-18_4_1" desc="Pass only 'noexcept' functions to exception-unfriendly functions" id="MISRACPP2023-18_4_1-c" origId="CODSTA-CPP-213" sev="2" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="MRM" desc="Do not invoke malloc/realloc for objects having constructors" id="MRM-08" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="MRM" desc="Declare a copy assignment operator for classes with dynamically allocated memory" id="MRM-37" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="MRM" desc="Declare a copy constructor for classes with dynamically allocated memory" id="MRM-38" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="MRM" desc="Never provide brackets ([]) for delete when deallocating non-arrays" id="MRM-35" sev="3" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="MRM" desc="Always provide empty brackets ([]) for delete when deallocating arrays" id="MRM-36" sev="3" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="MRM" desc="Do not use 'delete' on pointers to a void type" id="MRM-51" sev="3" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="OOP" desc="Class cannot inherit other class more than once unless it is virtual inheritance" id="OOP-03" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="OOP" desc="Avoid calling virtual functions from constructors" id="OOP-16" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="1;" authUrg="1;" cat="OOP" desc="If a class has virtual functions it shall have a virtual destructor" id="OOP-23" sev="2" total="1"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="6;" authUrg="6;" cat="OPT" desc="Pass objects by reference instead of by value" id="OPT-14" sev="3" total="6"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="PB" desc="Do not call delete on non-pointers" id="PB-13" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="PB" desc="Properly terminate character strings" id="PB-21" sev="1" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="PB" desc="Do not cast from or to incomplete class at the point of casting" id="PB-54" sev="2" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="PB" desc="Do not delete objects with incomplete class at the point of deletion" id="PB-55" sev="2" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="PB" desc="Boolean condition always evaluates to the same value due to enumeration with only zero or only non-zero constants" id="PB-68" sev="2" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="PB" desc="Suspicious argument to malloc" id="PB-60" sev="3" total="0"/>
+            <Rule analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" authTot="0;" authUrg="0;" cat="PB" desc="Pointer arithmetic performed on freshly allocated memory" id="PB-61" sev="3" total="0"/>
+         </RulesList>
+         <SeverityList>
+            <Severity authTot="1;" authUrg="1;" id="1" total="1"/>
+            <Severity authTot="11;" authUrg="11;" id="2" total="11"/>
+            <Severity authTot="6;" authUrg="6;" id="3" total="6"/>
+            <Severity authTot="1;" authUrg="1;" id="4" total="1"/>
+         </SeverityList>
+      </Rules>
+      
+  <Supps/>
+
+      
+  <StdViols>
+    <StdViol msg="Move constructor of class 'Account' should specify 'noexcept'" ln="7" locFile="/atm_cpp14/src/Account.cxx" auth="mzwawa23" rule="MISRACPP2023-18_4_1-a" lnHash="1100656247" rule.header="Exception-unfriendly functions shall be noexcept" locStartPos="9" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="02c2d597-5c6e-3908-badb-15e276af2237" locEndPos="10" urgent="true" prio="Not Defined" locEndLn="7" goals="1," rev="f4a1c571a866e6045446d2f2d396777bfced4c38" locStartln="7" sev="2" locRef="1" tool="c++test" lineHash="1100656247" revComm="" unbViolId="7d407a57-ec55-3880-9fea-953784acc852" risk="Undefined" locType="sr" hash="-810795966"/>
+    <FlowViol msg="Condition &quot;display.getType() == 0&quot; always evaluates to false" ln="46" locFile="/atm_cpp14/src/Account.cxx" ruleSAFMsg="Point where senseless condition is used" FirstElSrcRngEndPos="0" auth="mzwawa23" FirstElSrcRngEndLn="43" rule="BD-PB-CC" FirstElSrcRngStartPos="0" lnHash="1963162260" ruleSCSCMsg="Start of the path" FirstElSrcRngFile="/atm_cpp14/src/Account.cxx" rule.header="Avoid conditions that always evaluate to the same value" FirstElSrcRngStartln="42" locStartPos="0" analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" revTime="0" id="109259544" lang="cpp" violId="4072be1e-4c9b-3480-b6dc-8ab188eb936f" locEndPos="0" urgent="true" prio="Not Defined" locEndLn="47" goals="1," rev="f4a1c571a866e6045446d2f2d396777bfced4c38" locStartln="46" sev="2" locRef="1" tool="c++test" lineHash="1963162260" revComm="" unbViolId="010f3482-46ef-3c7b-97b6-30cd16243a6d" risk="Undefined" locType="sr" hash="-810795966" causeLocRef="1">
+      <ElDescList>
+        <ElDesc lineHash="-536743894" ln="42" srcRngStartPos="0" srcRngEndPos="0" locRef="1" locType="sr" srcRnghash="-810795966" srcRngStartln="42" srcRngEndLn="43" srcRngFile="/atm_cpp14/src/Account.cxx" desc="int Account::listTransactions(BaseDisplay&amp; display, UserRequest type) {" ElType=".C" rngLn="42">
+          <Anns>
+            <Ann msg="Start of the path" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc lineHash="67392142" ln="44" srcRngStartPos="0" srcRngEndPos="0" locRef="1" locType="sr" srcRnghash="-810795966" srcRngStartln="44" srcRngEndLn="45" srcRngFile="/atm_cpp14/src/Account.cxx" desc="int transactionsCount = 0;" ElType="." rngLn="44"/>
+        <ElDesc lineHash="1963162260" ln="46" srcRngStartPos="0" srcRngEndPos="0" locRef="1" locType="sr" srcRnghash="-810795966" srcRngStartln="46" srcRngEndLn="47" srcRngFile="/atm_cpp14/src/Account.cxx" desc="display.getType()" ElType="!" rngLn="46">
+          <ElDescList>
+            <ElDesc lineHash="264830969" ln="20" srcRngStartPos="0" srcRngEndPos="0" locRef="4" locType="sr" srcRnghash="-812920828" srcRngStartln="20" srcRngEndLn="21" srcRngFile="/atm_cpp14/src/BaseDisplay.cxx" desc="BaseDisplay::DisplayType BaseDisplay::getType() {return SECURE;}" ElType="!" rngLn="20"/>
+          </ElDescList>
+        </ElDesc>
+        <ElDesc lineHash="1963162260" ln="46" srcRngStartPos="0" srcRngEndPos="0" locRef="1" locType="sr" srcRnghash="-810795966" srcRngStartln="46" srcRngEndLn="47" srcRngFile="/atm_cpp14/src/Account.cxx" desc="if (display.getType() == BaseDisplay::UNKNOWN) {" ElType=".P" rngLn="46">
+          <Anns>
+            <Ann msg="Point where senseless condition is used" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Condition &quot;display.getType() == 0&quot; always evaluates to false" ln="46" locFile="/atm_cpp14/src/Account.cxx" ruleSAFMsg="Point where senseless condition is used" FirstElSrcRngEndPos="0" auth="mzwawa23" FirstElSrcRngEndLn="43" rule="MISRACPP2023-0_0_2-a" FirstElSrcRngStartPos="0" lnHash="1963162260" ruleSCSCMsg="Start of the path" FirstElSrcRngFile="/atm_cpp14/src/Account.cxx" rule.header="Avoid conditions that always evaluate to the same value" FirstElSrcRngStartln="42" locStartPos="0" analyzer="com.parasoft.xtest.cpp.analyzer.static.flow" revTime="0" id="109259544" lang="cpp" violId="06158a25-cd7a-3bd3-b666-6d76a3a7fe9d" locEndPos="0" urgent="true" prio="Not Defined" locEndLn="47" goals="1," rev="f4a1c571a866e6045446d2f2d396777bfced4c38" locStartln="46" sev="4" locRef="1" tool="c++test" lineHash="1963162260" revComm="" unbViolId="4a1b8727-c3fa-3703-9e80-506dc0c6771d" risk="Undefined" locType="sr" hash="-810795966" causeLocRef="1">
+      <ElDescList>
+        <ElDesc lineHash="-536743894" ln="42" srcRngStartPos="0" srcRngEndPos="0" locRef="1" locType="sr" srcRnghash="-810795966" srcRngStartln="42" srcRngEndLn="43" srcRngFile="/atm_cpp14/src/Account.cxx" desc="int Account::listTransactions(BaseDisplay&amp; display, UserRequest type) {" ElType=".C" rngLn="42">
+          <Anns>
+            <Ann msg="Start of the path" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc lineHash="67392142" ln="44" srcRngStartPos="0" srcRngEndPos="0" locRef="1" locType="sr" srcRnghash="-810795966" srcRngStartln="44" srcRngEndLn="45" srcRngFile="/atm_cpp14/src/Account.cxx" desc="int transactionsCount = 0;" ElType="." rngLn="44"/>
+        <ElDesc lineHash="1963162260" ln="46" srcRngStartPos="0" srcRngEndPos="0" locRef="1" locType="sr" srcRnghash="-810795966" srcRngStartln="46" srcRngEndLn="47" srcRngFile="/atm_cpp14/src/Account.cxx" desc="display.getType()" ElType="!" rngLn="46">
+          <ElDescList>
+            <ElDesc lineHash="264830969" ln="20" srcRngStartPos="0" srcRngEndPos="0" locRef="4" locType="sr" srcRnghash="-812920828" srcRngStartln="20" srcRngEndLn="21" srcRngFile="/atm_cpp14/src/BaseDisplay.cxx" desc="BaseDisplay::DisplayType BaseDisplay::getType() {return SECURE;}" ElType="!" rngLn="20"/>
+          </ElDescList>
+        </ElDesc>
+        <ElDesc lineHash="1963162260" ln="46" srcRngStartPos="0" srcRngEndPos="0" locRef="1" locType="sr" srcRnghash="-810795966" srcRngStartln="46" srcRngEndLn="47" srcRngFile="/atm_cpp14/src/Account.cxx" desc="if (display.getType() == BaseDisplay::UNKNOWN) {" ElType=".P" rngLn="46">
+          <Anns>
+            <Ann msg="Point where senseless condition is used" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <StdViol msg="Constructor does not initialize members: 'myCurrentAccount'" ln="7" locFile="/atm_cpp14/src/ATM.cxx" auth="mzwawa23" rule="INIT-06" lnHash="-1547882108" rule.header="All member variables should be initialized in constructor" locStartPos="5" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="fa3ef27a-bbe2-3fde-8400-0d3aca0dad5c" locEndPos="6" urgent="true" prio="Not Defined" locEndLn="7" goals="1," rev="efd130f3d12d031d5940a76cd3e7f84f297cb8f6" locStartln="7" sev="1" locRef="2" tool="c++test" lineHash="-1547882108" revComm="" unbViolId="e93af9ca-e80f-3afe-9fa9-4b7c6233c912" risk="Undefined" locType="sr" hash="-1370005397"/>
+    <StdViol msg="The parameter 'password' of function 'viewAccount' is passed by value" ln="13" locFile="/atm_cpp14/src/ATM.cxx" auth="mzwawa23" rule="OPT-14" lnHash="-2065354134" rule.header="Pass objects by reference instead of by value" locStartPos="48" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="72ea8865-bd24-34d8-b153-7324c08f0b6e" locEndPos="49" urgent="true" prio="Not Defined" locEndLn="13" goals="1," rev="efd130f3d12d031d5940a76cd3e7f84f297cb8f6" locStartln="13" sev="3" locRef="2" tool="c++test" lineHash="-2065354134" revComm="" unbViolId="f4fada28-e66c-36c5-ba00-470726964671" risk="Undefined" locType="sr" hash="-1370005397"/>
+    <StdViol msg="Do not define the '~Bank' destructor with an empty body" ln="9" locFile="/atm_cpp14/src/Bank.cxx" auth="mzwawa23" rule="MISRACPP2023-15_0_1-b" lnHash="487538751" rule.header="Destructor shall have a non-empty body" locStartPos="6" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="5a4c2bf2-3a51-32fc-979c-25a850b7ee00" locEndPos="7" urgent="true" prio="Not Defined" locEndLn="9" goals="1," rev="191eb2c28f016318222e2b54c39e3caffcdb89cc" locStartln="9" sev="2" locRef="3" tool="c++test" lineHash="487538751" revComm="" unbViolId="bd2ca73b-e57e-39e2-bfd6-ee7036674dcc" risk="Undefined" locType="sr" hash="1497090602"/>
+    <StdViol msg="The parameter 'password' of function 'getAccount' is passed by value" ln="15" locFile="/atm_cpp14/src/Bank.cxx" auth="mzwawa23" rule="OPT-14" lnHash="1544839595" rule.header="Pass objects by reference instead of by value" locStartPos="47" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="82bea813-3d31-3e43-9b46-1a28be1adee3" locEndPos="48" urgent="true" prio="Not Defined" locEndLn="15" goals="1," rev="191eb2c28f016318222e2b54c39e3caffcdb89cc" locStartln="15" sev="3" locRef="3" tool="c++test" lineHash="1544839595" revComm="" unbViolId="11d2323d-45e5-3fdc-aaf6-c81af47eab9b" risk="Undefined" locType="sr" hash="1497090602"/>
+    <StdViol msg="The parameter 'msg' of function 'logError' is passed by value" ln="21" locFile="/atm_cpp14/src/BaseDisplay.cxx" auth="mzwawa23" rule="OPT-14" lnHash="-919819380" rule.header="Pass objects by reference instead of by value" locStartPos="39" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="bf3511b5-fe65-3bce-adf0-6767fae13b64" locEndPos="40" urgent="true" prio="Not Defined" locEndLn="21" goals="1," rev="25026470a91edf9342753c7e10dc314ff1190ab0" locStartln="21" sev="3" locRef="4" tool="c++test" lineHash="-919819380" revComm="" unbViolId="647202c8-03e9-3d80-97a1-b4d4774fd368" risk="Undefined" locType="sr" hash="-812920828"/>
+    <StdViol msg="Class 'Account' shall have a customized destructor because it has customized copy or move operations" ln="15" locFile="/atm_cpp14/include/Account.hxx" auth="mzwawa23" rule="MISRACPP2023-15_0_1-a" lnHash="1462923109" rule.header="Special member functions shall be provided appropriately" locStartPos="6" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="b42bb436-9746-3566-b9bd-36d993013653" locEndPos="7" urgent="true" prio="Not Defined" locEndLn="15" goals="1," rev="86d4ba27f3250580bc05c2b50d76d90325848b0a" locStartln="15" sev="2" locRef="5" tool="c++test" lineHash="1462923109" revComm="" unbViolId="71597d3a-3149-3f67-8b2e-ee3434bf2a9f" risk="Undefined" locType="sr" hash="2068051207"/>
+    <StdViol msg="Move constructor of class 'Account' should specify 'noexcept'" ln="23" locFile="/atm_cpp14/include/Account.hxx" auth="mzwawa23" rule="MISRACPP2023-18_4_1-a" lnHash="1125280484" rule.header="Exception-unfriendly functions shall be noexcept" locStartPos="8" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="030fb9d2-a7c0-39b4-ba9c-785cc61c190e" locEndPos="9" urgent="true" prio="Not Defined" locEndLn="23" goals="1," rev="86d4ba27f3250580bc05c2b50d76d90325848b0a" locStartln="23" sev="2" locRef="5" tool="c++test" lineHash="1125280484" revComm="" unbViolId="2a6e589a-52ca-365c-93ae-e79f59257615" risk="Undefined" locType="sr" hash="2068051207"/>
+    <StdViol msg="Class 'Bank' shall have a customized copy constructor to be a general manager" ln="9" locFile="/atm_cpp14/include/Bank.hxx" auth="mzwawa23" rule="MISRACPP2023-15_0_1-a" lnHash="-349967356" rule.header="Special member functions shall be provided appropriately" locStartPos="6" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="407a8f4b-b5c2-37bc-913f-510a92c15a6d" locEndPos="7" urgent="true" prio="Not Defined" locEndLn="9" goals="1," rev="25026470a91edf9342753c7e10dc314ff1190ab0" locStartln="9" sev="2" locRef="6" tool="c++test" lineHash="-349967356" revComm="" unbViolId="8f951ed8-fe59-3c10-9763-6d53cae94250" risk="Undefined" locType="sr" hash="365519495"/>
+    <StdViol msg="Class 'Bank' shall have a customized copy assignment operator to be a copy-assignable general manager" ln="9" locFile="/atm_cpp14/include/Bank.hxx" auth="mzwawa23" rule="MISRACPP2023-15_0_1-a" lnHash="-349967356" rule.header="Special member functions shall be provided appropriately" locStartPos="6" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="e8b55b40-2ff8-339f-a46d-b3314ea07547" locEndPos="7" urgent="true" prio="Not Defined" locEndLn="9" goals="1," rev="25026470a91edf9342753c7e10dc314ff1190ab0" locStartln="9" sev="2" locRef="6" tool="c++test" lineHash="-349967356" revComm="" unbViolId="738b77c4-4bc3-300b-b907-60d160cb6003" risk="Undefined" locType="sr" hash="365519495"/>
+    <StdViol msg="The parameter 'password' of function 'getAccount' is passed by value" ln="17" locFile="/atm_cpp14/include/Bank.hxx" auth="mzwawa23" rule="OPT-14" lnHash="-293824505" rule.header="Pass objects by reference instead of by value" locStartPos="40" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="d6d1e757-86b6-3126-97a5-ca0b5db50d41" locEndPos="41" urgent="true" prio="Not Defined" locEndLn="17" goals="1," rev="25026470a91edf9342753c7e10dc314ff1190ab0" locStartln="17" sev="3" locRef="6" tool="c++test" lineHash="-293824505" revComm="" unbViolId="46eb8e5a-e2c9-3e77-ac3c-6ef387927746" risk="Undefined" locType="sr" hash="365519495"/>
+    <StdViol msg="The parameter 'password' of function 'viewAccount' is passed by value" ln="26" locFile="/atm_cpp14/include/ATM.hxx" auth="mzwawa23" rule="OPT-14" lnHash="564928550" rule.header="Pass objects by reference instead of by value" locStartPos="56" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="9b9a193d-a015-3583-ae82-a3e50b2fa171" locEndPos="57" urgent="true" prio="Not Defined" locEndLn="26" goals="1," rev="25026470a91edf9342753c7e10dc314ff1190ab0" locStartln="26" sev="3" locRef="7" tool="c++test" lineHash="564928550" revComm="" unbViolId="e2c24354-64c2-3557-bff5-35ed44b64b7a" risk="Undefined" locType="sr" hash="1586671268"/>
+    <StdViol msg="Class 'BaseDisplay' shall have a customized copy constructor to be a general manager" ln="8" locFile="/atm_cpp14/include/BaseDisplay.hxx" auth="mzwawa23" rule="MISRACPP2023-15_0_1-a" lnHash="1229723113" rule.header="Special member functions shall be provided appropriately" locStartPos="6" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="175fbb15-fcf4-3382-b536-789e53b90f38" locEndPos="7" urgent="true" prio="Not Defined" locEndLn="8" goals="1," rev="25026470a91edf9342753c7e10dc314ff1190ab0" locStartln="8" sev="2" locRef="8" tool="c++test" lineHash="1229723113" revComm="" unbViolId="62fd75a8-ef1f-38c5-b0ed-2271813b3b71" risk="Undefined" locType="sr" hash="14023177"/>
+    <StdViol msg="Class 'BaseDisplay' shall have a customized copy assignment operator to be a copy-assignable general manager" ln="8" locFile="/atm_cpp14/include/BaseDisplay.hxx" auth="mzwawa23" rule="MISRACPP2023-15_0_1-a" lnHash="1229723113" rule.header="Special member functions shall be provided appropriately" locStartPos="6" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="4491cb74-4c0c-3866-acc0-b31d8295dff6" locEndPos="7" urgent="true" prio="Not Defined" locEndLn="8" goals="1," rev="25026470a91edf9342753c7e10dc314ff1190ab0" locStartln="8" sev="2" locRef="8" tool="c++test" lineHash="1229723113" revComm="" unbViolId="96dbd81f-8965-3920-8ffd-2f2be354b53e" risk="Undefined" locType="sr" hash="14023177"/>
+    <StdViol msg="Class 'BaseDisplay' has virtual functions without a virtual destructor" ln="8" locFile="/atm_cpp14/include/BaseDisplay.hxx" auth="mzwawa23" rule="OOP-23" lnHash="1229723113" rule.header="If a class has virtual functions it shall have a virtual destructor" locStartPos="6" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="4231293a-07c0-3624-99b7-6c3d68f12db0" locEndPos="7" urgent="true" prio="Not Defined" locEndLn="8" goals="1," rev="25026470a91edf9342753c7e10dc314ff1190ab0" locStartln="8" sev="2" locRef="8" tool="c++test" lineHash="1229723113" revComm="" unbViolId="d414b469-c15e-3429-9b66-edaa81b60336" risk="Undefined" locType="sr" hash="14023177"/>
+    <StdViol msg="Do not define the '~BaseDisplay' destructor with an empty body" ln="16" locFile="/atm_cpp14/include/BaseDisplay.hxx" auth="mzwawa23" rule="MISRACPP2023-15_0_1-b" lnHash="401384735" rule.header="Destructor shall have a non-empty body" locStartPos="8" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="9fec8949-e6dc-372f-83e5-960380854dc2" locEndPos="9" urgent="true" prio="Not Defined" locEndLn="16" goals="1," rev="25026470a91edf9342753c7e10dc314ff1190ab0" locStartln="16" sev="2" locRef="8" tool="c++test" lineHash="401384735" revComm="" unbViolId="015b38c6-bbd2-3509-bbac-dc4dae48cf82" risk="Undefined" locType="sr" hash="14023177"/>
+    <StdViol msg="The parameter 'msg' of function 'logError' is passed by value" ln="22" locFile="/atm_cpp14/include/BaseDisplay.hxx" auth="mzwawa23" rule="OPT-14" lnHash="698033594" rule.header="Pass objects by reference instead of by value" locStartPos="42" analyzer="com.parasoft.xtest.cpp.analyzer.static.pattern" revTime="0" lang="cpp" violId="3b9baaf0-c4b6-36bd-82f3-3814f42728c1" locEndPos="43" urgent="true" prio="Not Defined" locEndLn="22" goals="1," rev="25026470a91edf9342753c7e10dc314ff1190ab0" locStartln="22" sev="3" locRef="8" tool="c++test" lineHash="698033594" revComm="" unbViolId="11d127e2-7817-386f-a04d-5207547c1133" risk="Undefined" locType="sr" hash="14023177"/>
+  </StdViols>
+
+      <TestedFilesDetails>
+         <Total name="Total (Suppressed)" supp="0" total="19">
+            <Project id="atm_cpp14" name="atm_cpp14" supp="0" total="19">
+               <Res name="src" supp="0" total="8">
+                  <Res loc="/atm_cpp14/src/Account.cxx" locRef="1" locType="sr" name="Account.cxx" supp="0" total="3"/>
+                  <Res loc="/atm_cpp14/src/ATM.cxx" locRef="2" locType="sr" name="ATM.cxx" supp="0" total="2"/>
+                  <Res loc="/atm_cpp14/src/Bank.cxx" locRef="3" locType="sr" name="Bank.cxx" supp="0" total="2"/>
+                  <Res loc="/atm_cpp14/src/BaseDisplay.cxx" locRef="4" locType="sr" name="BaseDisplay.cxx" supp="0" total="1"/>
+               </Res>
+               <Res name="include" supp="0" total="11">
+                  <Res loc="/atm_cpp14/include/Account.hxx" locRef="5" locType="sr" name="Account.hxx" supp="0" total="2"/>
+                  <Res loc="/atm_cpp14/include/Bank.hxx" locRef="6" locType="sr" name="Bank.hxx" supp="0" total="3"/>
+                  <Res loc="/atm_cpp14/include/ATM.hxx" locRef="7" locType="sr" name="ATM.hxx" supp="0" total="1"/>
+                  <Res loc="/atm_cpp14/include/BaseDisplay.hxx" locRef="8" locType="sr" name="BaseDisplay.hxx" supp="0" total="5"/>
+               </Res>
+            </Project>
+         </Total>
+      </TestedFilesDetails>
+   </CodingStandards>
+   <Statistics>
+      
+   </Statistics>
+</ResultsSession>
