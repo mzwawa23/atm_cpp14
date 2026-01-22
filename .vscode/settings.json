@@ -27,7 +27,7 @@
         ]
 <<<<<<< HEAD
     },
-    "cpptest.commandLinePattern": "cpptestcli ${stopFile} ${compilerConfig} ${testConfig} ${reportDir} ${selectedFiles} -module . -exclude \"**/googletest/**\" -exclude \"**/tests/**\" -exclude \"**/googlemock/**\" -input build/compile_commands.json"
+    "cpptest.commandLinePattern": "cpptestcli ${stopFile} ${compilerConfig} ${testConfig} ${reportDir} ${selectedFiles} -module . -exclude \"**/googletest/**\" -exclude \"**/tests/**\" -exclude \"**/googlemock/**\" -input build/compile_commands.json" -property scope.scontrol.files.filter.mode=branch
 =======
     }
 >>>>>>> fe4c916c5f0d2575bf5dca88cde9f58bfb874333
