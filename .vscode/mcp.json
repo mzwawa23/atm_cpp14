@@ -1,11 +1,11 @@
 {
 	"servers": {
-		"my-mcp-server-a44bece2": {
+		"my-mcp-server-cpptest_std": {
 			"type": "stdio",
 			"command": "/opt/parasoft/cpptest_std/cpptest/integration/mcp/cpptestmcp",
 			"args": []
 		},
-		"my-mcp-server-1887db66": {
+		"my-mcp-server-cpptest-ct": {
 			"type": "stdio",
 			"command": "/opt/parasoft/cpptest-ct/integration/mcp/cpptestmcp",
 			"args": []
