@@ -2,6 +2,23 @@
 #include "ATM.hxx"
 #include "BaseDisplay.hxx"
 #include <utility>
+#include <iostream>
+
+int processData(int value)
+{
+    int* buffer = new int[10];  
+    if (value < 0) {
+        std::cout << "Value is negative.\n";
+        return -1;
+    }
+   else{
+        std::cout << "Value is positive.\n";
+        return 1;
+    }
+    buffer[0] = value * 2;
+    std::cout << "Processed value: " << buffer[0] << "\n";
+    return buffer[0];  
+}
 
 // C++11/14: move constructor
 Account::Account(Account&& a):
