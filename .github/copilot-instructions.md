@@ -39,6 +39,8 @@ This project is **tightly coupled with Parasoft C/C++test**:
 - Configuration files in `conf/` (e.g., "Recommended Rules.properties", "MISRA C++ 2023.properties")
 - VS Code integration via `.vscode/settings.json` with `cpptest.testConfiguration`
 - Suppression comments: `// parasoft-cov-begin-suppress ALL` and corresponding end tags
+- Suppression syntax for specific static code analysis rules: `// parasoft-suppress <rule_id> "Justification"`
+- if reports/report.xml exist don't rerun static code analysis and look for violations in this file first. If the file doesn't exist, run static code analysis and then look for violations in the generated report.xml file.
 
 ## Testing Strategy
 **Dual testing approach**:
