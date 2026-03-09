@@ -66,8 +66,7 @@ The codebase demonstrates specific modern C++ features:
 
 **Suppression syntax**:
 ```cpp
-// Parasoft: 
-/* PRQA S rule_number */ // Reason
+// parasoft-suppress <rule_id> "Justification for suppression"
 ```
 
 ## Development Workflow
