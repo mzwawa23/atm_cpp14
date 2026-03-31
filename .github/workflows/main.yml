@@ -77,7 +77,53 @@ jobs:
       with:
         name: CpptestReports
         path: reports/*.*
-       
+ 
+
+  run-cpptest-UT:
+    name: Run UT with C/C++test
+
+    # Specifies required permissions for upload-sarif action
+    permissions:
+      # required for all workflows
+      security-events: write
+      # only required for workflows in private repositories
+      actions: read
+      contents: read
+
+    # Specifies the type of runner that the job will run on.
+    runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job.
+    steps:
+
+    - name: Clean github workspace
+      shell: bash
+      working-directory: ${{github.workspace}}
+      run: rm -rf *.*
+
+    # Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # Builds your Make project using 'cpptesttrace' to collect input data for code analysis.
+    # Be sure 'cpptesttrace' is available on $PATH.
+    - name: Build project
+      run: cpptesttrace make clean all
+
+    - name: Run Parasoft Unit Tests
+      working-directory: ${{github.workspace}}
+      shell: bash
+      # Query for project's coverage and compare with the gate requirements     
+      run: /home/marcin/parasoft/cpptest_prof/cpptest/cpptestcli -data ../workspace -import . -showdetails -config conf/Run\ Unit\ Tests\ Custom.properties -appconsole stdout -settings cpptestcli.properties -property dtp.enabled=true -report reports -property report.coverage.images="AllCov;UTCov" -publish
+    
+    # Uploads an archive that includes all report files (.xml, .html, .sarif).
+    - name: Archive reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: CpptestUTReports
+        path: reports/*.*
+
 
   build_with_ut_ccov:
     runs-on: self-hosted
