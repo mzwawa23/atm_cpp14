@@ -114,7 +114,7 @@ jobs:
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements     
-      run: /home/marcin/parasoft/cpptest_prof/cpptest/cpptestcli -data ../workspace -import . -showdetails -config conf/Run\ Unit\ Tests\ Custom.properties -appconsole stdout -settings cpptestcli.properties -property dtp.enabled=true -report reports -property dtp.additional.settings=report.coverage.images\=AllCov;UTCov -publish
+      run: /home/marcin/parasoft/cpptest_prof/cpptest/cpptestcli -data ../workspace -import . -showdetails -config conf/Run\ Unit\ Tests\ Custom.properties -appconsole stdout -settings cpptestcli.properties -property dtp.enabled=true -report reports -property dtp.additional.settings=report.coverage.images\="AllCov;UTCov" -publish
     
     # Uploads an archive that includes all report files (.xml, .html, .sarif).
     - name: Archive reports
