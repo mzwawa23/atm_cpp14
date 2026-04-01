@@ -119,9 +119,9 @@ jobs:
     - name: Run Parasoft Unit Tests
       working-directory: ${{github.workspace}}
       shell: bash
-      # Query for project's coverage and compare with the gate requirements     
-      run: /home/marcin/parasoft/cpptest_prof/cpptest/cpptestcli -data ../workspace -import . -showdetails -config conf/Run\ Unit\ Tests\ Custom.properties -appconsole stdout -settings cpptestcli.properties -property dtp.enabled=true -report reports -publish
-    
+      # Run Parasoft Unit Tests with the 'cpptestcli' command line interface. Be sure 'cpptestcli' is available on $PATH and cpptestcli.properties file is properly configured. Adjust the command parameters as needed for your project and test configuration.     
+      run: /home/marcin/parasoft/cpptest_prof/cpptest/cpptestcli -data ../workspace -import . -showdetails -config conf/Run\ Unit\ Tests\ Custom.properties -appconsole stdout -settings cpptestcli.properties -property dtp.enabled=true -report reports -property scontrol.rep1.git.workspace=${{github.workspace}} -property scontrol.rep1.git.url=https://github.com/mzwawa23/atm_cpp14 -property scontrol.rep1.git.branch=${{github.ref}} -publish
+
     # Uploads an archive that includes all report files (.xml, .html, .sarif).
     - name: Archive reports
       if: always()
