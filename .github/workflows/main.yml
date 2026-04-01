@@ -182,7 +182,7 @@ jobs:
     - name: Publish Reports to DTP
       working-directory: ${{github.workspace}}/build
       shell: bash
-      run: cpptestcov report dtp -coverage="LC,SC,BC,DC,SCC,MCDC,FC,CC" ../.coverage  atm_cpp14.xml -root .. -settings ../cpptestcli.properties -property report.coverage.images="AllCov;gtestCov"-property scontrol.rep1.git.workspace=${{github.workspace}} -property scontrol.rep1.git.url=https://github.com/mzwawa23/atm_cpp14 -property scontrol.rep1.git.branch=${{github.ref}}
+      run: cpptestcov report dtp -coverage="LC,SC,BC,DC,SCC,MCDC,FC,CC" ../.coverage  atm_cpp14.xml -root .. -settings ../cpptestcli.properties -property report.coverage.images="AllCov;gtestCov" -property scontrol.rep1.git.workspace=${{github.workspace}} -property scontrol.rep1.git.url=https://github.com/mzwawa23/atm_cpp14 -property scontrol.rep1.git.branch=${{github.ref}}
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
