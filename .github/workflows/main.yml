@@ -2,7 +2,7 @@ name: SCA and UT build with execution (main)
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, CI* ]
 
 env:
   LINE_COV_GATE: 30
@@ -105,6 +105,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    # Remove reports and workspace data from previous runs to ensure clean environment for the current run. This is especially important if you are using self-hosted runners, which may have data from previous runs.
+    - name: Remove reports and workspace data
+      shell: bash
+      working-directory: ${{github.workspace}}  
+      run: rm -rf reports/*.* ../workspace/*.*
+
     # Builds your Make project using 'cpptesttrace' to collect input data for code analysis.
     # Be sure 'cpptesttrace' is available on $PATH.
     - name: Build project
@@ -114,7 +120,7 @@ jobs:
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements     
-      run: /home/marcin/parasoft/cpptest_prof/cpptest/cpptestcli -data ../workspace -import . -showdetails -config conf/Run\ Unit\ Tests\ Custom.properties -appconsole stdout -settings cpptestcli.properties -property dtp.enabled=true -report reports -property dtp.additional.settings=report.coverage.images\="AllCov;UTCov" -publish
+      run: /home/marcin/parasoft/cpptest_prof/cpptest/cpptestcli -data ../workspace -import . -showdetails -config conf/Run\ Unit\ Tests\ Custom.properties -appconsole stdout -settings cpptestcli.properties -property dtp.enabled=true -report reports -publish
     
     # Uploads an archive that includes all report files (.xml, .html, .sarif).
     - name: Archive reports
