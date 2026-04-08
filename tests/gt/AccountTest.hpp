@@ -60,6 +60,49 @@ TEST(Account, debitSimple) {
   ASSERT_EQ(acct.getBalance(), initial - amount);
 }
 
+// processData() unit tests for 100% MC/DC coverage
+// Decision: if (value < 0)
+//   TRUE  path → returns -1
+//   FALSE path → allocates buffer, returns value * 2
+
+TEST(ProcessData, negativeValueReturnsMinusOne) {
+  // MC/DC condition TRUE: value < 0
+  ::testing::Test::RecordProperty("req", "ATM-520");
+  ASSERT_EQ(processData(-1), -1);
+}
+
+TEST(ProcessData, largeNegativeReturnsMinusOne) {
+  // MC/DC condition TRUE: value < 0 (large magnitude)
+  ::testing::Test::RecordProperty("req", "ATM-520");
+  ASSERT_EQ(processData(-1000), -1);
+}
+
+TEST(ProcessData, zeroReturnsDoubled) {
+  // MC/DC condition FALSE: value == 0 (lower boundary of false path)
+  ::testing::Test::RecordProperty("req", "ATM-520");
+  ASSERT_EQ(processData(0), 0 * 2);
+}
+
+TEST(ProcessData, positiveOneReturnsDoubled) {
+  // MC/DC condition FALSE: value == 1 (first positive value)
+  ::testing::Test::RecordProperty("req", "ATM-520");
+  ASSERT_EQ(processData(1), 1 * 2);
+}
+
+TEST(ProcessData, positiveValueReturnsDoubled) {
+  // MC/DC condition FALSE: value > 0
+  ::testing::Test::RecordProperty("req", "ATM-520");
+  ASSERT_EQ(processData(5), 5 * 2);
+}
+
+TEST(ProcessData, mcdcIndependentConditionEffect) {
+  // MC/DC: shows condition value < 0 independently determines outcome
+  // Changing only condition from FALSE to TRUE changes the result
+  ::testing::Test::RecordProperty("req", "ATM-520");
+  ASSERT_EQ(processData(-1), -1);  // condition TRUE  → -1
+  ASSERT_EQ(processData(1),   2);  // condition FALSE → 2
+}
+
 // TEST(Account, getBalanceInitBad) {
 //  ::testing::Test::RecordProperty("req", "ATM_test-510");
 //   const double initial = 223.0;
