@@ -22,10 +22,10 @@ The project uses **dual build systems**:
 1. **CMake** (primary): `mkdir build && cd build && cmake .. && make`
 2. **Legacy Makefile**: Creates static library `ATM_Cpp14_lib.a`
 
-**Critical VS Code tasks** (use these instead of manual commands):
-- "Configure and Build": Sets up CMake with C/C++test coverage integration
-- "Run": Executes GoogleTest with XML output for test reporting
-- "Compute logs and generate reports": Processes C/C++test coverage data
+**Critical tasks** (manual tasks are preferred for C/C++test integration):
+- `cmake -DCPPTEST_COVERAGE=ON .. && make`: Sets up CMake with C/C++test coverage integration
+- `./atm_gtest --gtest_output=xml`: Executes GoogleTest with XML output for test reporting
+- `make cpptestcov-compute cpptestcov-suppress cpptestcov-report`: Processes C/C++test coverage data
 
 ## C/C++test Integration (Essential)
 This project is **tightly coupled with Parasoft C/C++test**:
@@ -77,6 +77,8 @@ The codebase demonstrates specific modern C++ features:
 3. **Check coverage** after test runs in `.coverage/` directory
 4. **Follow C++14 patterns** when adding new code (auto, move semantics, lambdas)
 5. **Include requirement tracing** in tests using `RecordProperty("req", "ATM-XXX")`
+6. Build tests with C/C++test coverage enabled to ensure instrumentation is correct and coverage data is generated - like 'cmake -DCPPTEST_COVERAGE=ON ..' then 'make' to build the tests with coverage instrumentation. This will allow you to generate the necessary coverage data when you run the tests.
+7. After running tests, make sure to compute logs and generate reports to process the coverage data and generate the necessary reports for analysis - like 'make cpptestcov-compute cpptestcov-suppress cpptestcov-report'.
 
 ## Key Files to Understand
 - `cpptest-coverage.cmake`: C/C++test build integration
