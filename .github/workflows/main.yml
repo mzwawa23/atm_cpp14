@@ -182,7 +182,7 @@ jobs:
     - name: Publish Reports to DTP using cpptestcli
       working-directory: ${{github.workspace}}/build
       shell: bash
-      run: cpptestcli -config ${{github.workspace}}/conf/GoogleTest.properties -input ${{github.workspace}}/build/atm_cpp14.xml -input ${{github.workspace}}/build/cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog -showdetails -workspace ${{github.workspace}}/build/cpptest-coverage/ATM_Cpp14_lib -settings ${{github.workspace}}/cpptestcli.properties -property report.coverage.images="AllCov;gtestCov" -property scontrol.rep1.git.workspace=${{github.workspace}} -property scontrol.rep1.git.url=https://github.com/mzwawa23/atm_cpp14 -property scontrol.rep1.git.branch=${{github.ref}} -property scontrol.git.exec=git -publish
+      run: cpptestcli -config ${{github.workspace}}/conf/GoogleTest.properties -input ${{github.workspace}}/build/atm_cpp14.xml -input ${{github.workspace}}/build/cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog -showdetails -workspace ${{github.workspace}}/build/cpptest-coverage/ATM_Cpp14_lib -settings ${{github.workspace}}/cpptestcli.properties -property report.coverage.images="AllCov;gtestCov" -property scontrol.rep1.git.workspace=${{github.workspace}} -property scontrol.rep1.git.url=https://github.com/mzwawa23/atm_cpp14 -property scontrol.rep1.git.branch=${{github.ref}} -property scontrol.git.exec=git -publish -module ${{github.workspace}}
       
     #- name: Publish Reports to DTP using cpptestcov
     #  working-directory: ${{github.workspace}}/build
