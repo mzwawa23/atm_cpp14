@@ -50,6 +50,7 @@ This project is **tightly coupled with Parasoft C/C++test**:
 **Test utilities**:
 - `TestObjectFactory`: Singleton pattern for creating test scenarios (e.g., `bankWithTwoAccounts()`)
 - Tests include requirement traceability (ATM-XXX format)
+- Tests include file-level properties for traceability (`::testing::Test::RecordProperty("cpptest_filename", __FILE__)`)
 
 ## C++14 Patterns Used
 The codebase demonstrates specific modern C++ features:

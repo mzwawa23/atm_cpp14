@@ -4,12 +4,14 @@
 #include <string>
 
 TEST(Account, getBalanceDefault) {
+  RecordProperty("cpptest_filename", __FILE__);
   ::testing::Test::RecordProperty("req", "ATM-512");
   Account acct;
   ASSERT_EQ(acct.getBalance(), 0.0);
 }
 
 TEST(Account, getBalanceInit) {
+  RecordProperty("cpptest_filename", __FILE__);
   ::testing::Test::RecordProperty("req", "ATM-512");
   const double initial = 123.0;
   Account acct(initial);
@@ -17,6 +19,7 @@ TEST(Account, getBalanceInit) {
 }
 
 TEST(Account, getAndSetPassword) {
+  RecordProperty("cpptest_filename", __FILE__);
   ::testing::Test::RecordProperty("req", "ATM-512");
   std::string thePwd("The Password");
   Account acct;
@@ -26,6 +29,7 @@ TEST(Account, getAndSetPassword) {
 }
 
 TEST(Account, getAndSetPasswordEmpty) {
+  RecordProperty("cpptest_filename", __FILE__);
   ::testing::Test::RecordProperty("req", "ATM-512");
   std::string thePwd("");
   Account acct;
@@ -35,6 +39,7 @@ TEST(Account, getAndSetPasswordEmpty) {
 }
 
 TEST(Account, getAndSetAccountNumber) {
+  RecordProperty("cpptest_filename", __FILE__);
   ::testing::Test::RecordProperty("req", "ATM-515");
   int num = 123;
   Account acct;
@@ -43,6 +48,7 @@ TEST(Account, getAndSetAccountNumber) {
 }
 
 TEST(Account, depositSimple) {
+  RecordProperty("cpptest_filename", __FILE__);
   ::testing::Test::RecordProperty("req", "ATM-510");
   const double initial = 123.0;
   const double amount = 456.0;
@@ -52,6 +58,7 @@ TEST(Account, depositSimple) {
 }
 
 TEST(Account, debitSimple) {
+  RecordProperty("cpptest_filename", __FILE__);
   ::testing::Test::RecordProperty("req", "ATM-510");
   const double initial = 123.0;
   const double amount = 45.0;
@@ -61,6 +68,7 @@ TEST(Account, debitSimple) {
 }
 
 // TEST(Account, getBalanceInitBad) {
+//   RecordProperty("cpptest_filename", __FILE__);
 //  ::testing::Test::RecordProperty("req", "ATM_test-510");
 //   const double initial = 223.0;
 //   Account acct(initial);

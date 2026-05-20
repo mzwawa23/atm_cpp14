@@ -39,6 +39,7 @@ set(SRC_FILES
 set(INCLUDE_DIRS
   ./
   ./include
+  $ENV{CPPTEST_HOME}/runtime/include
 )
 
 message(STATUS "SRC_FILES: ${SRC_FILES}")
