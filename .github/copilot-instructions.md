@@ -73,7 +73,7 @@ The codebase demonstrates specific modern C++ features:
 
 ## Development Workflow
 1. **Always use VS Code tasks** for build operations (they handle C/C++test integration)
-2. **Run static analysis** via VS Code C/C++test extension or `cpptestcli` command line
+2. **Run static analysis** via VS Code C/C++test extension (the 'cpptestcli' command from .vscode/settings.json file)
 3. **Check coverage** after test runs in `.coverage/` directory
 4. **Follow C++14 patterns** when adding new code (auto, move semantics, lambdas)
 5. **Include requirement tracing** in tests using `RecordProperty("req", "ATM-XXX")`
