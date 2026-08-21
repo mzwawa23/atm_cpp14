@@ -1,11 +1,11 @@
-#Wed Feb 19 11:19:15 CET 2025
+#Thu Apr 23 15:27:16 CEST 2026
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.advanced.options=
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.cdt.configuration=CPPTEST_USE_ACTIVE_CONFIG
-/ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.command.c.linux.x86=gcc
+/ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.command.c.linux.x86=/home/marcin/parasoft/cpptest_prof/cpptest/integration/docker/remote-gcc
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.command.c.win32.x86=gcc
-/ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.command.cpp.linux.x86=g++
+/ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.command.cpp.linux.x86=/home/marcin/parasoft/cpptest_prof/cpptest/integration/docker/remote-g++
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.command.cpp.win32.x86=g++
-/ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.family.linux.x86=gcc_9-64
+/ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.family.linux.x86=gcc_12-64
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.family.win32.x86=gcc_7-64
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.options.linux.x86=${cpptest\:original_options} -DPARASOFT_CPPTEST
 /ATM_Cpp14//com.parasoft.xtest.checkers.api.cpp.options.compiler.options.win32.x86=${cpptest\:original_options} -DPARASOFT_CPPTEST
