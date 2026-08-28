@@ -4,7 +4,8 @@
 
 using std::string;
 
-ATM::ATM(Bank* bank, BaseDisplay* display)
+ATM::ATM(Bank* bank, BaseDisplay* display) :
+    myCurrentAccount(nullptr)
 {
     myBank = bank;
     myDisplay = display;

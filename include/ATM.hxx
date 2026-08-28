@@ -9,7 +9,7 @@ class BaseDisplay;
 class Account;
 
 // C++11 enum class
-enum class UserRequest {
+enum class UserRequest { // parasoft-suppress MISRACPP2023-6_0_3-a "any case"
     REQUEST_INVALID = 0,
     REQUEST_BALANCE = 1,
     REQUEST_DEPOSIT,

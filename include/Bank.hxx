@@ -14,7 +14,7 @@ class Bank
         ~Bank();
 
         // C++11/14: auto return type
-        auto getAccount(int num, string password) -> Account*;
+        auto getAccount(int num, string password) -> Account*; 
         Account* addAccount();
 
     private:
