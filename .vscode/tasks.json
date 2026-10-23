@@ -33,11 +33,12 @@
             "group": "build"
         },
         {
-            "label": "Upload results to DTP",
+            "label": "Delete feature branch in repository",
             "type": "shell",
-            "command": "bash -c 'cd build;cpptestcov publish ../.coverage/coverage.xml ../.coverage/gtest.xml ../.coverage/coverage_details.xml -settings ../report.properties'",
+            "command": "bash -c 'git branch -D feature_branch_1;git push origin --delete feature_branch_1;'",
             "group": "build"
         }
+
 
     ]
 }
