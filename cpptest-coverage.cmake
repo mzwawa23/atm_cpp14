@@ -159,8 +159,15 @@ function (cpptest_enable_coverage)
         -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
         -code
         -root "${CPPTEST_SOURCE_DIR}"
-        -out ../.coverage/report.html
+        -out ../.coverage/coverage.html
         "${CPPTEST_SOURCE_DIR}/.coverage"
+    &&
+    ${CPPTEST_HOME_DIR}/bin/cpptestcov report xtest
+        "${CPPTEST_BINARY_DIR}/*.xml"
+        ../.coverage
+        -root "${CPPTEST_SOURCE_DIR}"
+        -out ../.coverage
+        -verbose
     &&
     ${CPPTEST_HOME_DIR}/bin/cpptestcov report text
         -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
