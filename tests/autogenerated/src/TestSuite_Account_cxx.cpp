@@ -59,7 +59,7 @@ void TestSuite_Account_cxx_15e9a265::tearDown()
 }
 
 /* CPPTEST_TEST_CASE_BEGIN test_case_unknown_display */
-// @REQ REQ-123
+// @REQ ATM-519
 /* CPPTEST_TEST_CASE_CONTEXT int Account::listTransactions(BaseDisplay &, UserRequest) */
 void TestSuite_Account_cxx_15e9a265::test_case_unknown_display()
 {
@@ -253,7 +253,7 @@ CPPTEST_ASSERT_CSTR_N_EQUAL("", _cpptest_TestObject.myPassword.c_str(), 256);
 /* CPPTEST_TEST_CASE_END test_case_secure_display */
 
 /* CPPTEST_TEST_CASE_BEGIN test_case_desposit_operations */
-// @REQ REQ-345
+// @REQ ATM-519
 /* CPPTEST_TEST_CASE_CONTEXT int Account::listTransactions(BaseDisplay &, UserRequest) */
 /* CPPTEST_TEST_CASE_CALLBACKS_BEGIN */
 void TestSuite_Account_cxx_15e9a265::CppTest_StubCallback_test_case_desposit_operations_1_BaseDisplay_getType(CppTest_StubCallInfo* stubCallInfo, ::BaseDisplay::DisplayType* __return, ::BaseDisplay* __this)

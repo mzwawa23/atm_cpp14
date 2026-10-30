@@ -35,7 +35,7 @@
         {
             "label": "Upload results to DTP",
             "type": "shell",
-            "command": "bash -c 'cd build;cpptestcov publish ../.coverage/coverage.xml ../.coverage/gtest.xml ../.coverage/coverage_details.xml -settings ../report.properties'",
+            "command": "bash -c 'cpptestcov report dtp -root . -settings cpptestct.properties .coverage build/atm_cpp14.xml -property report.coverage.images=AllCov;GtestCov'",
             "group": "build"
         }
 

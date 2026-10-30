@@ -184,7 +184,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_ATM_4()
 /* CPPTEST_TEST_CASE_CONTEXT void ATM::fillUserRequest(UserRequest, double) */
 void TestSuite_ATM_cxx_a1e971d1::test_fillUserRequest_1()
 {
-    /* @req ATM-513* /
+    /* @req ATM-513  */
     /* Pre-condition initialization */
     /* Initializing argument 0 (this) */ 
         /* Initializing constructor argument 1 (bank) */ 
@@ -236,7 +236,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_fillUserRequest_10()
 /* CPPTEST_TEST_CASE_CONTEXT void ATM::fillUserRequest(UserRequest, double) */
 void TestSuite_ATM_cxx_a1e971d1::test_fillUserRequest_2()
 {
-    /* @req ATM-513* /
+    /* @req ATM-513  * /
     /* Pre-condition initialization */
     /* Initializing argument 0 (this) */ 
         /* Initializing constructor argument 1 (bank) */ 
@@ -264,7 +264,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_fillUserRequest_2()
 /* CPPTEST_TEST_CASE_CONTEXT void ATM::fillUserRequest(UserRequest, double) */
 void TestSuite_ATM_cxx_a1e971d1::test_fillUserRequest_3()
 {
-    /* @req ATM-513* /
+    /* @req ATM-513  * /
     /* Pre-condition initialization */
     /* Initializing argument 0 (this) */ 
         /* Initializing constructor argument 1 (bank) */ 
@@ -445,7 +445,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_fillUserRequest_9()
 /* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_1()
 {
-    /* @req ATM-509* /
+    /* @req ATM-509  * /
     /* Pre-condition initialization */
     /* Initializing argument 0 (this) */ 
         /* Initializing constructor argument 1 (bank) */ 
@@ -499,7 +499,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_10()
 /* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_2()
 {
-    /* @req ATM-509* /
+    /* @req ATM-509  * /
     /* Pre-condition initialization */
     /* Initializing argument 0 (this) */ 
         /* Initializing constructor argument 1 (bank) */ 
@@ -526,7 +526,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_2()
 /* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_3()
 {
-    /* @req ATM-509* /
+    /* @req ATM-509  * /
     /* Pre-condition initialization */
     /* Initializing argument 0 (this) */ 
         /* Initializing constructor argument 1 (bank) */ 
@@ -553,7 +553,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_3()
 /* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_4()
 {
-    /* @req ATM-509* /
+    /* @req ATM-509  * /
     /* Pre-condition initialization */
     /* Initializing argument 0 (this) */ 
         /* Initializing constructor argument 1 (bank) */ 
@@ -580,7 +580,7 @@ void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_4()
 /* CPPTEST_TEST_CASE_CONTEXT void ATM::viewAccount(int, std::string) */
 void TestSuite_ATM_cxx_a1e971d1::test_viewAccount_5()
 {
-    /* @req ATM-509* /
+    /* @req ATM-509  * /
     /* Pre-condition initialization */
     /* Initializing argument 0 (this) */ 
         /* Initializing constructor argument 1 (bank) */ 
