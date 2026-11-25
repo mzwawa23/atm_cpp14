@@ -192,7 +192,7 @@ jobs:
     - name: Publish Reports to DTP using cpptestcov
       working-directory: ${{github.workspace}}
       shell: bash 
-      run: cpptestcov report dtp -root . -settings cpptestct.properties .coverage -property report.coverage.images="AllCov;gtestCovCT" -property session.tag=${{env.session_tag}}
+      run: cpptestcov report dtp -root . -settings cpptestct.properties .coverage -property report.coverage.images="AllCov;gtestCovCT" -property session.tag=${{env.session_tag}} -module ATM_Cpp14=${{github.workspace}} 
 
     - name: Publish Reports to DTP using cpptestcli
       working-directory: ${{github.workspace}}
