@@ -187,7 +187,7 @@ jobs:
     - name: Set session_tag
       shell: bash
       working-directory: ${{github.workspace}}
-      run: echo "session_tag=${{github.head_ref}}-linux_x86_64" >> $GITHUB_ENV  
+      run: echo "session_tag=${{github.ref_name}}-linux_x86_64" >> $GITHUB_ENV  
 
     - name: Publish Reports to DTP using cpptestcov
       working-directory: ${{github.workspace}}
