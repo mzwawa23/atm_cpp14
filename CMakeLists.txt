@@ -27,6 +27,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 
 if(CPPTEST_COVERAGE)
   include(cpptest-coverage.cmake)
+  add_compile_definitions(PARASOFT_CPPTEST)
 endif()
 
 set(SRC_FILES

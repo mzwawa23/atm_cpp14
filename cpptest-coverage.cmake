@@ -163,11 +163,11 @@ function (cpptest_enable_coverage)
         "${CPPTEST_SOURCE_DIR}/.coverage"
     &&
     ${CPPTEST_HOME_DIR}/bin/cpptestcov report xtest
-        -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
+        "${CPPTEST_BINARY_DIR}/*.xml"
+        ../.coverage
         -root "${CPPTEST_SOURCE_DIR}"
-        -out ../.coverage/report.html
-        "${CPPTEST_SOURCE_DIR}/.coverage"
-        "${CPPTEST_BINARY_DIR}/atm_cpp14.xml"
+        -out ../.coverage
+        -verbose
     &&
     ${CPPTEST_HOME_DIR}/bin/cpptestcov report text
         -coverage=${CPPTEST_COVERAGE_TYPE_REPORT}
